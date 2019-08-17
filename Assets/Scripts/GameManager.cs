@@ -4,10 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public WorkBenchData WorkBenchData;
-    public PlantData PlantData;
-    public StoreData StoreData;
-
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -32,14 +28,8 @@ public class GameManager : MonoBehaviour
             case GameScene.MainMenu:
                 InitializeMainMenuScene();
                 break;
-            case GameScene.Garden:
-                InitializeGardenScene();
-                break;
-            case GameScene.Workbench:
-                InitializeWorkBenchScene();
-                break;
-            case GameScene.Store:
-                InitializeStoreScene();
+            case GameScene.Game:
+                InitializeGameScene();
                 break;
         }
     }
@@ -49,17 +39,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void InitializeGardenScene()
-    {
-
-    }
-
-    void InitializeWorkBenchScene()
-    {
-
-    }
-
-    void InitializeStoreScene()
+    void InitializeGameScene()
     {
 
     }
@@ -68,7 +48,5 @@ public class GameManager : MonoBehaviour
 public enum GameScene
 {
     MainMenu,
-    Garden,
-    Workbench,
-    Store
+    Game
 }

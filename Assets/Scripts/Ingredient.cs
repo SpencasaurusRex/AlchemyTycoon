@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
 
-public class Ingredient : MonoBehaviour
+public class Ingredient
 {
     public string Name;
     public float[] Attributes;
+    public PhysicalTrait Physical;
 }
 
 public enum IngredientType
@@ -16,19 +17,27 @@ public enum IngredientType
     BlueToadshade
 }
 
+[FlagsAttribute]
+public enum PhysicalTrait
+{
+    Solid = 1,
+    Powder = 2,
+    Liquid = 4
+}
+
 public static class IngredientTypeExtensions
 {
-    static readonly int[][] IngredientAttributes =
+    static readonly float[][] IngredientAttributes =
     {
-        new [] { 1, -1,  0},
-        new [] { 1,  0, -1},
-        new [] { 0,  1, -1},
-        new [] {-1,  1,  0},
-        new [] {-1,  0,  1},
-        new [] { 0, -1,  1},
+        new [] {.4f, -.4f, 0},
+        new [] {.4f, 0, -.4f},
+        new [] { 0f, 1,-1},
+        new [] {-1f, 1, 0},
+        new [] {-1f, 0, 1},
+        new [] { 0f,-1, 1},
     };
 
-    public static int[] Attributes(this IngredientType type)
+    public static float[] Attributes(this IngredientType type)
     {
         return IngredientAttributes[(int)type];
     }
@@ -49,8 +58,7 @@ public static class IngredientTypeExtensions
                 return "Lavender Sprig";
             case IngredientType.BlueToadshade:
                 return "Blue Toadshade";
-            default:
-                return "Mixture";
         }
+        throw new ArgumentOutOfRangeException();
     }
 }
