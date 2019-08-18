@@ -18,4 +18,15 @@ public class ToolObject : MonoBehaviour
         var tmp = GetComponentInChildren<TextMeshProUGUI>();
         if (tmp != null) tmp.text = Tool.Name;
     }
+
+    public bool IngredientDropped(Ingredient ingredient)
+    { 
+        if (!Tool.CanProcess(ingredient))
+        { 
+            return false;
+        }
+        
+        Ingredient = ingredient;
+        return true;
+    }
 }

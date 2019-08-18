@@ -50,7 +50,7 @@ public class MortarAndPestle : ITool
 
 public class Alembic : CommonTool
 {
-    public string Name => "Alembic";
+    public override string Name => "Alembic";
 
     public Alembic()
     {
@@ -62,7 +62,7 @@ public class Alembic : CommonTool
 
 public class Retort : CommonTool
 {
-    public string Name => "Retort";
+    public override string Name => "Retort";
 
     public Retort()
     {
@@ -73,7 +73,7 @@ public class Retort : CommonTool
 
 public class Rack : CommonTool
 {
-    public string Name => "Rack";
+    public override string Name => "Rack";
 
     public Rack()
     {
@@ -84,7 +84,7 @@ public class Rack : CommonTool
 
 public class Torch : CommonTool
 {
-    public string Name => "Torch";
+    public override string Name => "Torch";
 
     public Torch()
     {
@@ -95,7 +95,7 @@ public class Torch : CommonTool
 
 public class Pot : CommonTool
 {
-    public string Name => "Pot";
+    public override string Name => "Pot";
 
     public Pot()
     {

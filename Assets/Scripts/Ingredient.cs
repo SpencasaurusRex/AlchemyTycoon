@@ -5,11 +5,18 @@ public class Ingredient
     public string Name;
     public float[] Attributes;
     public PhysicalTrait Physical;
+
+    public Ingredient(IngredientType type)
+    { 
+        Name = type.Name();
+        Attributes = type.Attributes();
+        Physical = PhysicalTrait.Solid;
+    }
 }
 
 public enum IngredientType
 {
-    MilkWeedSeeds,
+    MilkWeed,
     AmanitaCap,
     ArrowRoot,
     BloodGrass,
@@ -17,13 +24,6 @@ public enum IngredientType
     BlueToadshade
 }
 
-[FlagsAttribute]
-public enum PhysicalTrait
-{
-    Solid = 1,
-    Powder = 2,
-    Liquid = 4
-}
 
 public static class IngredientTypeExtensions
 {
@@ -46,8 +46,8 @@ public static class IngredientTypeExtensions
     {
         switch (type)
         {
-            case IngredientType.MilkWeedSeeds:
-                return "Milkweed Seeds";
+            case IngredientType.MilkWeed:
+                return "Milkweed";
             case IngredientType.AmanitaCap:
                 return "Amanita Cap";
             case IngredientType.ArrowRoot:

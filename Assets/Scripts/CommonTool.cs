@@ -4,7 +4,7 @@
     public float[] Additions;
     public PhysicalTrait AcceptedPhysical;
 
-    public string Name { get; }
+    public virtual string Name { get; }
     public float[] ModifyAttributes(float[] attributes)
     {
         float[] result = new float[attributes.Length];
