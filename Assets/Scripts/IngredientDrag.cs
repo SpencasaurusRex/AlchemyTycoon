@@ -2,31 +2,24 @@
 
 public class IngredientDrag : MonoBehaviour
 {
-    bool dragging;
-    Vector3 pressPosition;
-    Vector3 offset;
-
-
-    void Start()
-    {
-    }
+    public float Sharpness;
+    public bool Dragging;
 
     void OnMouseDrag()
     { 
-        if (!dragging)
-        { 
-            pressPosition = MousePosition;
-            offset = transform.position - pressPosition;
-            dragging = true;
-        }
+        Dragging = true;
+    }
 
-        transform.position = MousePosition;// + offset;
+    void OnMouseUp()
+    { 
+        Dragging = false;
+    }
+
+    void Update()
+    { 
+        if (!Dragging) return;
+        transform.position = Vector3.Lerp(transform.position, MousePosition, 1 - Mathf.Exp(-Sharpness * Time.deltaTime));
     }
 
     Vector3 MousePosition => Camera.main.ScreenToWorldPoint(Input.mousePosition).WithZ(0);
-
-    void OnMouseUp()
-    {
-        dragging = false;
-    }
 }
