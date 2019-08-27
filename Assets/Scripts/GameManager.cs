@@ -1,52 +1,67 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; set; }
+    
+    public Dictionary<Type, List<Functionality>> Functionalities = new Dictionary<Type, List<Functionality>>();
+    public Dictionary<Type, List<UnityEngine.Object>> Objects = new Dictionary<Type, List<UnityEngine.Object>>();
+
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    void Start()
-    {
-        var scene = (GameScene)Enum.Parse(typeof(GameScene), SceneManager.GetActiveScene().name);
-        InitializeScene(scene);
-    }
-
-    public void SwitchScene(GameScene scene)
-    {
-        SceneManager.LoadScene(scene.ToString());
-        InitializeScene(scene);
-    }
-
-    void InitializeScene(GameScene scene)
-    {
-        switch (scene)
+        if (Instance != null)
         {
-            case GameScene.MainMenu:
-                InitializeMainMenuScene();
-                break;
-            case GameScene.Game:
-                InitializeGameScene();
-                break;
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // Register logic
+        Register(new HideObject());
+
+        // Register existing objects
+        foreach (var kvp in Functionalities)
+        { 
+            Register(FindObjectsOfType(kvp.Key));
         }
     }
 
-    void InitializeMainMenuScene()
-    {
+    public void Register(Functionality f)
+    { 
+        foreach (var componentType in f.SubscribedComponents)
+        {
+            if (!Functionalities.ContainsKey(componentType)) 
+            { 
+                Functionalities.Add(componentType, new List<Functionality>());
+            }
 
+            Functionalities[componentType].Add(f);
+        }
     }
 
-    void InitializeGameScene()
-    {
-
+    public void Register(params UnityEngine.Object[] objs)
+    { 
+        foreach (var obj in objs)
+        { 
+            if (!Objects.ContainsKey(obj.GetType()))
+            {
+                Objects.Add(obj.GetType(), new List<UnityEngine.Object>());
+            }
+            Objects[obj.GetType()].Add(obj);
+        }
     }
-}
 
-public enum GameScene
-{
-    MainMenu,
-    Game
+    void Update()
+    { 
+        foreach (var kvp in Functionalities)
+        { 
+            foreach (var functionality in kvp.Value)
+            { 
+                functionality.Update(Objects[kvp.Key]);
+            }
+        }
+    }
 }
