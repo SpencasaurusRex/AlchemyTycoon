@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // Register logic
-        Register(new HideObject());
+        Register(new DragIngredient());
 
         // Register existing objects
         foreach (var kvp in Functionalities)
@@ -51,6 +51,33 @@ public class GameManager : MonoBehaviour
                 Objects.Add(obj.GetType(), new List<UnityEngine.Object>());
             }
             Objects[obj.GetType()].Add(obj);
+        }
+    }
+
+    public void MouseDrag(UnityEngine.Object obj)
+    {
+        if (!Functionalities.ContainsKey(obj.GetType())) return;
+        foreach (var f in Functionalities[obj.GetType()])
+        { 
+            f.MouseDrag(obj);
+        }
+    }
+
+    public void MouseDown(UnityEngine.Object obj)
+    {
+        if (!Functionalities.ContainsKey(obj.GetType())) return;
+        foreach (var f in Functionalities[obj.GetType()])
+        { 
+            f.MouseDown(obj);
+        }
+    }
+
+    public void MouseUp(UnityEngine.Object obj)
+    {
+        if (!Functionalities.ContainsKey(obj.GetType())) return;
+        foreach (var f in Functionalities[obj.GetType()])
+        { 
+            f.MouseUp(obj);
         }
     }
 

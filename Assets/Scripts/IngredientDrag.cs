@@ -1,18 +1,11 @@
 ﻿using UnityEngine;
 
-public class IngredientDrag : MonoBehaviour
+public class IngredientDrag : Clickable
 {
+    [Header("Configure")]
+    public float InitialSharpness = 10;
+    public float SharpnessIncrease = 2000f;
+    public float MaxSharpness = 2000;
+    [Header("Runtime")]
     public float Sharpness;
-    public bool Dragging;
-
-    void OnMouseDrag()
-    { 
-        Dragging = true;
-    }
-
-    void OnMouseUp()
-    { 
-        Dragging = false;
-        Sharpness = 0;
-    }
 }

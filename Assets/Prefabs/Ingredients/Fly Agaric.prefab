@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5019008844020599646}
   - component: {fileID: 5019008844020599640}
-  - component: {fileID: 5019008844020599641}
   - component: {fileID: 5019008844020599642}
   - component: {fileID: 8367162786274523344}
+  - component: {fileID: 1224005809}
   m_Layer: 0
   m_Name: Fly Agaric
   m_TagString: Untagged
@@ -85,20 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5019008844020599641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019008844020599643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdbae7a5b451b2e4c98cb99e636c9ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sharpness: 0
-  Dragging: 0
 --- !u!65 &5019008844020599642
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -130,3 +116,18 @@ MonoBehaviour:
   - 0
   - 0
   Physical: 0
+--- !u!114 &1224005809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019008844020599643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbae7a5b451b2e4c98cb99e636c9ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialSharpness: 20
+  InitialDragPeriod: 0.5
+  DragLength: 0

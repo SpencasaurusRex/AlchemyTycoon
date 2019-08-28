@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -291,6 +292,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1030572165, guid: 55844b68ef591944d8ea9ba01be690e9, type: 3}
+      propertyPath: InitialDragPeriod
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030572165, guid: 55844b68ef591944d8ea9ba01be690e9, type: 3}
+      propertyPath: MaxSharpness
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030572165, guid: 55844b68ef591944d8ea9ba01be690e9, type: 3}
+      propertyPath: SharpnessIncrease
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55844b68ef591944d8ea9ba01be690e9, type: 3}
 --- !u!1001 &4683096910716721658
@@ -484,10 +497,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5019008844020599641, guid: c27d8b7339919ab4cb2f2ff36b1c4a82,
-        type: 3}
-      propertyPath: Sharpness
-      value: 20
+    - target: {fileID: 1224005809, guid: c27d8b7339919ab4cb2f2ff36b1c4a82, type: 3}
+      propertyPath: InitialDragPeriod
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224005809, guid: c27d8b7339919ab4cb2f2ff36b1c4a82, type: 3}
+      propertyPath: MaxSharpness
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224005809, guid: c27d8b7339919ab4cb2f2ff36b1c4a82, type: 3}
+      propertyPath: SharpnessIncrease
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c27d8b7339919ab4cb2f2ff36b1c4a82, type: 3}

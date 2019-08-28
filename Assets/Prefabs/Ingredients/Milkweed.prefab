@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2549335078062789396}
   - component: {fileID: 2549335078062789398}
-  - component: {fileID: 2549335078062789399}
   - component: {fileID: 2549335078062789392}
   - component: {fileID: 2549335078062789397}
+  - component: {fileID: 1030572165}
   m_Layer: 0
   m_Name: Milkweed
   m_TagString: Untagged
@@ -85,20 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2549335078062789399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2549335078062789393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdbae7a5b451b2e4c98cb99e636c9ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sharpness: 20
-  Dragging: 0
 --- !u!65 &2549335078062789392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -130,3 +116,18 @@ MonoBehaviour:
   - 0
   - 0
   Physical: 1
+--- !u!114 &1030572165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549335078062789393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbae7a5b451b2e4c98cb99e636c9ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialSharpness: 20
+  InitialDragPeriod: 0.5
+  DragLength: 0
