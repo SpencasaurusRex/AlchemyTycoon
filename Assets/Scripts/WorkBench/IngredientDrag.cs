@@ -10,11 +10,13 @@ public class IngredientDrag : MonoBehaviour
     public float Sharpness;
 
     BoxCollider2D collider;
+    Ingredient ingredient;
 
     void Start()
     {
         Sharpness = InitialSharpness;
         collider = GetComponent<BoxCollider2D>();
+        ingredient = GetComponent<Ingredient>();
     }
 
     void OnMouseDrag()
@@ -33,8 +35,16 @@ public class IngredientDrag : MonoBehaviour
         // Figure out where we dropped
         Vector2 origin = transform.position + collider.offset.WithZ(0);
         // Physics2D.OverlapBoxAll(origin, collider.size, 0, LayerMask.GetMask(""));
-        var hits = Physics2D.RaycastAll(origin, Vector2.zero, 0, LayerMask.GetMask("Tool"));
-        foreach (var hit in hits) print(hit.collider.gameObject.name);
+        var hit = Physics2D.Raycast(MousePosition, Vector2.zero, 0, LayerMask.GetMask("Tool"));
+        var tool = hit.collider.gameObject.GetComponent<Tool>();
+        if (tool.CanProcess(ingredient))
+        {
+            tool.Ingredient = ingredient;
+        }
+        else
+        {
+            // Return ingredient to where it was
+        }
     }
 
     public Vector3 MousePosition => Camera.main.ScreenToWorldPoint(Input.mousePosition).WithZ(0);

@@ -7,8 +7,18 @@ public class Tool : MonoBehaviour
     public float[] Additions;
     public PhysicalTrait AcceptedPhysical;
     public PhysicalTrait ResultingPhysical;
-    [Header("Runtime")]
-    public Transform Ingredient;
+
+    Ingredient ingredient;
+    public Ingredient Ingredient
+    {
+        set
+        {
+            value.GetComponent<SpriteRenderer>().enabled = false;
+            ingredient = value;
+        }
+
+        get => ingredient;
+    }
 
     public bool CanProcess(Ingredient ingredient) => (ingredient.Physical & AcceptedPhysical) > 0;
 
