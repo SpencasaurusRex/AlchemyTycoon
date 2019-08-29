@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7557541584491770857}
+  - component: {fileID: 7557541584491770862}
   - component: {fileID: 7557541584491770863}
   - component: {fileID: 7557541584491770860}
-  - component: {fileID: 7557541584491770862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Alembic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,6 +33,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7557541584491770862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7557541584491770856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af84a4226ad16544d8a8a0fcdc4a31e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multipliers:
+  - 1.25
+  - 0.8
+  - 1
+  Additions:
+  - 0.1
+  - -0.2
+  - 0
+  AcceptedPhysical: 4
+  ResultingPhysical: 1
+  Ingredient: {fileID: 0}
 --- !u!212 &7557541584491770863
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -110,26 +133,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.8506777}
   m_EdgeRadius: 0
---- !u!114 &7557541584491770862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7557541584491770856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af84a4226ad16544d8a8a0fcdc4a31e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Multipliers:
-  - 1.25
-  - 0.8
-  - 1
-  Additions:
-  - 0.1
-  - -0.2
-  - 0
-  AcceptedPhysical: 4
-  ResultingPhysical: 1
-  Ingredient: {fileID: 0}

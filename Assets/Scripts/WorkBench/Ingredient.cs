@@ -3,9 +3,16 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
-    public string Name;
+    [Header("Configure")]
     public float[] Attributes;
+    public PhysicalTrait StartingPhysical;
+    [Header("Runtime")]
     public PhysicalTrait Physical;
+
+    void Start()
+    {
+        Physical = StartingPhysical;
+    }
 }
 
 [Flags]

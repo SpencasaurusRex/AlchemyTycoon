@@ -163,8 +163,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -4374723741160035172, guid: d89169f6c9ca88a41a5a8b2595cff28a,
     type: 3}
   m_Type: 0
@@ -239,8 +237,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -7440668273734110218, guid: d89169f6c9ca88a41a5a8b2595cff28a,
     type: 3}
   m_Type: 0
@@ -261,10 +257,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4683096912424196127}
+  - component: {fileID: 4683096912424196120}
   - component: {fileID: 4683096912424196126}
   - component: {fileID: 4683096912424196121}
-  - component: {fileID: 4683096912424196120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mortar & Pestle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,6 +287,29 @@ RectTransform:
   m_AnchoredPosition: {x: -2, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4683096912424196120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4683096912424196123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af84a4226ad16544d8a8a0fcdc4a31e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multipliers:
+  - 1
+  - 1
+  - 1
+  Additions:
+  - 0
+  - 0
+  - 0
+  AcceptedPhysical: 1
+  ResultingPhysical: 2
+  Ingredient: {fileID: 0}
 --- !u!212 &4683096912424196126
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -368,26 +387,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4683096912424196120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4683096912424196123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af84a4226ad16544d8a8a0fcdc4a31e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Multipliers:
-  - 1
-  - 1
-  - 1
-  Additions:
-  - 0
-  - 0
-  - 0
-  AcceptedPhysical: 1
-  ResultingPhysical: 2
-  Ingredient: {fileID: 0}
