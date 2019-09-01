@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 public class IngredientDrag : MonoBehaviour
 {
@@ -7,8 +8,8 @@ public class IngredientDrag : MonoBehaviour
     public float SharpnessIncrease = 2000f;
     public float MaxSharpness = 2000;
     [Header("Runtime")]
+    [DisableInEditorMode]
     public float Sharpness;
-
     BoxCollider2D boxCollider;
     Ingredient ingredient;
     Vector2 startPosition;

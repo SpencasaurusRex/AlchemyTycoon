@@ -5,8 +5,9 @@ public class Tool : MonoBehaviour
     [Header("Configure")]
     public float[] Multipliers;
     public float[] Additions;
-    public PhysicalTrait AcceptedPhysical;
-    public PhysicalTrait ResultingPhysical;
+
+    public IngredientType AcceptedTypes;
+    public IngredientType ResultType;
 
     ToolProcess process;
 

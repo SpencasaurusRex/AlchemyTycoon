@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5019008844020599646}
-  - component: {fileID: 5019008844020599640}
   - component: {fileID: 8367162786274523344}
   - component: {fileID: 1224005809}
+  - component: {fileID: 5019008844020599640}
   - component: {fileID: 174168785}
   m_Layer: 0
-  m_Name: Fly Agaric
+  m_Name: Fly Amanita
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,6 +34,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8367162786274523344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019008844020599643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16127f3c1ac84f3469f4812584e0d67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attributes:
+  - 0
+  - 0
+  - 0
+  StartIngredientType: 2
+  IngredientType: 0
+--- !u!114 &1224005809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019008844020599643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbae7a5b451b2e4c98cb99e636c9ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialSharpness: 20
+  SharpnessIncrease: 200
+  MaxSharpness: 100
+  Sharpness: 0
 --- !u!212 &5019008844020599640
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85,41 +119,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8367162786274523344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019008844020599643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16127f3c1ac84f3469f4812584e0d67e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attributes:
-  - 0
-  - 0
-  - 0
-  StartingPhysical: 1
-  IngredientType: 0
-  Physical: 1
---- !u!114 &1224005809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019008844020599643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdbae7a5b451b2e4c98cb99e636c9ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitialSharpness: 20
-  SharpnessIncrease: 200
-  MaxSharpness: 100
-  Sharpness: 0
 --- !u!61 &174168785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -133,7 +132,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0034, y: 0.0051}
+  m_Offset: {x: -0.018626511, y: -0.0120328665}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -144,5 +143,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5716, y: 0.67}
+  m_Size: {x: 0.60205305, y: 0.7804124}
   m_EdgeRadius: 0

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2549335078062789396}
-  - component: {fileID: 2549335078062789398}
   - component: {fileID: 2549335078062789397}
   - component: {fileID: 1030572165}
+  - component: {fileID: 2549335078062789398}
   - component: {fileID: 1311010909}
   m_Layer: 0
   m_Name: Milkweed
@@ -34,6 +34,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2549335078062789397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549335078062789393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16127f3c1ac84f3469f4812584e0d67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attributes:
+  - 0
+  - 0
+  - 0
+  StartingPhysical: 1
+  IngredientType: 1
+  Physical: 1
+--- !u!114 &1030572165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549335078062789393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbae7a5b451b2e4c98cb99e636c9ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialSharpness: 20
+  SharpnessIncrease: 200
+  MaxSharpness: 100
+  Sharpness: 0
 --- !u!212 &2549335078062789398
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -5679681372999991991, guid: e0a2511fd721ce64caa6d0c89e353ed0,
+  m_Sprite: {fileID: 4372381551759688375, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -85,41 +120,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2549335078062789397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2549335078062789393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16127f3c1ac84f3469f4812584e0d67e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attributes:
-  - 0
-  - 0
-  - 0
-  StartingPhysical: 1
-  IngredientType: 1
-  Physical: 1
---- !u!114 &1030572165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2549335078062789393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdbae7a5b451b2e4c98cb99e636c9ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitialSharpness: 20
-  SharpnessIncrease: 200
-  MaxSharpness: 100
-  Sharpness: 0
 --- !u!61 &1311010909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -133,10 +133,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014528394, y: 0.061680377}
+  m_Offset: {x: -0.016600609, y: -0.0067148805}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5188856, y: 0.42917907}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -144,5 +144,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5795195, y: 0.5839087}
+  m_Size: {x: 0.71628475, y: 0.7206992}
   m_EdgeRadius: 0

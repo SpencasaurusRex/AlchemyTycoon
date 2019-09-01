@@ -91,25 +91,25 @@ TextureImporter:
     second: sheet_28
   - first:
       213: -3807297515833748856
-    second: sheet_29
+    second: bottle
   - first:
       213: 4372381551759688375
-    second: sheet_30
+    second: milkweed
   - first:
       213: -8302254863492273045
-    second: sheet_31
+    second: fly_amanita
   - first:
       213: -863169582964885348
-    second: sheet_32
+    second: arrow_root
   - first:
       213: -832198905909771304
-    second: sheet_33
+    second: bloodgrass
   - first:
       213: 662046916731068474
-    second: sheet_34
+    second: lavender
   - first:
       213: -5679681372999991991
-    second: sheet_35
+    second: toadlegs
   - first:
       213: -4666756510880264869
     second: sheet_36
@@ -118,7 +118,7 @@ TextureImporter:
     second: sheet_37
   - first:
       213: -9218115008462819005
-    second: sheet_38
+    second: arrow
   - first:
       213: 2096794751010941262
     second: sheet_39
@@ -139,7 +139,7 @@ TextureImporter:
     second: grill
   - first:
       213: -1308681137950721158
-    second: sheet_45
+    second: powder
   - first:
       213: 3752806198092373919
     second: sheet_46
@@ -152,6 +152,9 @@ TextureImporter:
   - first:
       213: -2186017444305452852
     second: sheet_49
+  - first:
+      213: 8015492745623666938
+    second: problem
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -689,7 +692,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_29
+      name: bottle
       rect:
         serializedVersion: 2
         x: 288
@@ -710,7 +713,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_30
+      name: milkweed
       rect:
         serializedVersion: 2
         x: 0
@@ -731,7 +734,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_31
+      name: fly_amanita
       rect:
         serializedVersion: 2
         x: 32
@@ -752,7 +755,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_32
+      name: arrow_root
       rect:
         serializedVersion: 2
         x: 64
@@ -773,7 +776,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_33
+      name: bloodgrass
       rect:
         serializedVersion: 2
         x: 96
@@ -794,7 +797,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_34
+      name: lavender
       rect:
         serializedVersion: 2
         x: 128
@@ -815,7 +818,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_35
+      name: toadlegs
       rect:
         serializedVersion: 2
         x: 160
@@ -878,13 +881,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_38
+      name: arrow
       rect:
         serializedVersion: 2
         x: 256
-        y: 32
-        width: 32
-        height: 32
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1025,7 +1028,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_45
+      name: powder
       rect:
         serializedVersion: 2
         x: 160
@@ -1146,6 +1149,27 @@ TextureImporter:
       bones: []
       spriteID: 5c236a71fd169f74c8a7de8a03ecd0b0
       internalID: -5581956015464806101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: problem
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe41b6ec58da1de47b78fb1608246c03
+      internalID: 8015492745623666938
       vertices: []
       indices: 
       edges: []

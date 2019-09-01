@@ -55,8 +55,8 @@ MonoBehaviour:
   - 0.1
   - -0.2
   - 0
-  AcceptedPhysical: 4
-  ResultingPhysical: 1
+  AcceptedTypes: 128
+  ResultType: 64
 --- !u!114 &2523679034120313867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.12159073}
+  m_Offset: {x: -0.0038066506, y: 0.034509182}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -145,7 +145,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.8506777}
+  m_Size: {x: 0.8248955, y: 0.7516875}
   m_EdgeRadius: 0
 --- !u!1001 &6040746522455496618
 PrefabInstance:
@@ -263,11 +263,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5798452199218347602, guid: 0952bc0181b80c24dacc23c4b0b73aaa,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0952bc0181b80c24dacc23c4b0b73aaa, type: 3}

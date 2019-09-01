@@ -1,5 +1,7 @@
 ﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class GameController : SerializedMonoBehaviour
 {
@@ -7,19 +9,16 @@ public class GameController : SerializedMonoBehaviour
 
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
+        if (Instance != null)
         {
             Destroy(this);
+            return;
         }
+        Instance = this;
     }
 
     #region Ingredient Properties
     
-
     [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.OneLine)]
     public Dictionary<IngredientType, IngredientProperty> IngredientProperties = new Dictionary<IngredientType, IngredientProperty>()
     {
@@ -28,12 +27,23 @@ public class GameController : SerializedMonoBehaviour
         { IngredientType.Powder, new IngredientProperty() },
     };
 
+    public Sprite GetSprite(IngredientType type)
+    {
+        return IngredientProperties[type].Sprite;
+    }
+
     #endregion
 }
 
+[Flags]
 public enum IngredientType
 {
-    FlyAmanita,
-    MilkWeed,
-    Powder,
+    MilkWeed = 1,
+    FlyAmanita = 2,
+    ArrowRoot = 4,
+    BloodGrass = 8,
+    Lavender = 16,
+    ToadLegs = 32,
+    Powder = 64,
+    Bottle = 128
 }

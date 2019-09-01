@@ -5,6 +5,5 @@ using UnityEngine;
 [SerializeField]
 public struct IngredientProperty
 {
-    public Sprite sprite;
-
+    public Sprite Sprite;
 }

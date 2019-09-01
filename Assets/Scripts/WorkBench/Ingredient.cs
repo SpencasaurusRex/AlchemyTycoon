@@ -1,25 +1,28 @@
-﻿using System;
+﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
     [Header("Configure")]
     public float[] Attributes;
-    public PhysicalTrait StartingPhysical;
-    public IngredientType IngredientType;
+    public IngredientType StartIngredientType;
+
     [Header("Runtime")]
-    public PhysicalTrait Physical;
+    [DisableInEditorMode]
+    public IngredientType IngredientType;
+
+    SpriteRenderer sr;
 
     void Start()
     {
-        Physical = StartingPhysical;
-    }
-}
+        sr = GetComponent<SpriteRenderer>();
 
-[Flags]
-public enum PhysicalTrait
-{
-    Solid = 1,
-    Powder = 2,
-    Liquid = 4
+        SetType(StartIngredientType);
+    }
+
+    public void SetType(IngredientType type)
+    {
+        IngredientType = type;
+        sr.sprite = GameController.Instance.GetSprite(type);
+    }
 }

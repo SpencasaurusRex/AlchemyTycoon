@@ -8,19 +8,19 @@ public class ToolProcess : MonoBehaviour
 
     float processTime;
 
-    Canvas canvas;
+    ToolUI toolUI;
     Tool tool;
     Ingredient ingredient;
     ProgressBar progressBar;
 
     void Start()
     {
-        canvas = GetComponentInChildren<Canvas>(true);
+        toolUI = GetComponentInChildren<ToolUI>();
         tool = GetComponent<Tool>();
         progressBar = GetComponentInChildren<ProgressBar>();
     }
 
-    public bool CanProcess(Ingredient ingredient) => this.ingredient == null && (ingredient.Physical & tool.AcceptedPhysical) > 0;
+    public bool CanProcess(Ingredient ingredient) => this.ingredient == null && (ingredient.IngredientType & tool.AcceptedTypes) > 0;
 
     public void StartProcess(Ingredient ingredient)
     {
@@ -30,7 +30,7 @@ public class ToolProcess : MonoBehaviour
         ingredient.transform.position = transform.position;
 
         // Show progress bar
-        canvas.enabled = true;
+        toolUI.Processing(true);
     }
 
     void Update()
@@ -49,7 +49,7 @@ public class ToolProcess : MonoBehaviour
 
     void FinishProcess()
     {
-        ModifyIngrediens();
+        ModifyIngredients();
 
         // Move and show ingredient
         ingredient.transform.position += Vector3.right;
@@ -57,10 +57,10 @@ public class ToolProcess : MonoBehaviour
         ingredient = null;
 
         // Hide progress bar
-        canvas.enabled = false;
+        toolUI.Processing(false);
     }
 
-    void ModifyIngrediens()
+    void ModifyIngredients()
     {
         for (int i = 0; i < ingredient.Attributes.Length; i++)
         {
@@ -80,6 +80,6 @@ public class ToolProcess : MonoBehaviour
             }
         }
 
-        ingredient.Physical = tool.ResultingPhysical;
+        ingredient.SetType(tool.ResultType);
     }
 }
