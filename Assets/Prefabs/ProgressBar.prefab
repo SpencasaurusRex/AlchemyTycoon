@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 0.375}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5798452198532618509
 CanvasRenderer:
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7440668273734110218, guid: d89169f6c9ca88a41a5a8b2595cff28a,
+  m_Sprite: {fileID: -2218698658706304759, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -101,16 +101,16 @@ RectTransform:
   m_GameObject: {fileID: 5798452198932606864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5798452199218347605}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.45, y: 0}
-  m_SizeDelta: {x: 0.9, y: 0.1875}
-  m_Pivot: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -0.375, y: -0.25}
+  m_SizeDelta: {x: 0.75, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &5798452198932606861
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4374723741160035172, guid: d89169f6c9ca88a41a5a8b2595cff28a,
+  m_Sprite: {fileID: -5581956015464806101, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -185,8 +185,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.378}
-  m_SizeDelta: {x: 1, y: 0.3105}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0.875, y: 0.1875}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5798452199218347602
 Canvas:
@@ -195,10 +195,10 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5798452199218347606}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 588038399528729045, guid: 83a3b82bc328b6b46bcb7afe133a3fca, type: 3}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
 --- !u!114 &7723906818445835609
 MonoBehaviour:
   m_ObjectHideFlags: 0

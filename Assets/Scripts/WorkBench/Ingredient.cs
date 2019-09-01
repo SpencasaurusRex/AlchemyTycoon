@@ -6,6 +6,7 @@ public class Ingredient : MonoBehaviour
     [Header("Configure")]
     public float[] Attributes;
     public PhysicalTrait StartingPhysical;
+    public IngredientType IngredientType;
     [Header("Runtime")]
     public PhysicalTrait Physical;
 
@@ -21,11 +22,4 @@ public enum PhysicalTrait
     Solid = 1,
     Powder = 2,
     Liquid = 4
-}
-
-public enum IngredientType
-{
-    FlyAmanita,
-    MilkWeed,
-    Powder,
 }

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8367162786274523344}
   - component: {fileID: 1224005809}
   - component: {fileID: 174168785}
-  - component: {fileID: 9003600051735081712}
   m_Layer: 0
   m_Name: Fly Agaric
   m_TagString: Untagged
@@ -103,7 +102,8 @@ MonoBehaviour:
   - 0
   - 0
   StartingPhysical: 1
-  Physical: 0
+  IngredientType: 0
+  Physical: 1
 --- !u!114 &1224005809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,22 +146,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5716, y: 0.67}
   m_EdgeRadius: 0
---- !u!95 &9003600051735081712
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019008844020599643}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

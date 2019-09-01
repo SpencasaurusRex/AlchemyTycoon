@@ -25,7 +25,7 @@ TextureImporter:
     second: sheet_6
   - first:
       213: -5581956015464806101
-    second: sheet_7
+    second: ProgressBar_Inner
   - first:
       213: -2661919970533589962
     second: sheet_8
@@ -61,7 +61,7 @@ TextureImporter:
     second: sheet_18
   - first:
       213: -2218698658706304759
-    second: sheet_19
+    second: ProgressBar_Outer
   - first:
       213: 2562169664635839239
     second: sheet_20
@@ -124,19 +124,19 @@ TextureImporter:
     second: sheet_39
   - first:
       213: -7936603521824548063
-    second: sheet_40
+    second: mortar_pestle
   - first:
       213: -8175751224450135963
-    second: sheet_41
+    second: alembic
   - first:
       213: 759806175588820344
-    second: sheet_42
+    second: pressurizer
   - first:
       213: -4294464135343857242
-    second: sheet_43
+    second: calcifier
   - first:
       213: 5182346603733836655
-    second: sheet_44
+    second: grill
   - first:
       213: -1308681137950721158
     second: sheet_45
@@ -542,13 +542,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_19
+      name: ProgressBar_Outer
       rect:
         serializedVersion: 2
         x: 288
-        y: 96
+        y: 112
         width: 32
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -920,15 +920,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_40
+      name: mortar_pestle
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4339005}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -941,7 +941,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_41
+      name: alembic
       rect:
         serializedVersion: 2
         x: 32
@@ -962,7 +962,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_42
+      name: pressurizer
       rect:
         serializedVersion: 2
         x: 64
@@ -983,7 +983,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_43
+      name: calcifier
       rect:
         serializedVersion: 2
         x: 96
@@ -1004,7 +1004,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_44
+      name: grill
       rect:
         serializedVersion: 2
         x: 128
@@ -1125,6 +1125,27 @@ TextureImporter:
       bones: []
       spriteID: 51c2896f6e4f5f54eb05a15dab635019
       internalID: -2186017444305452852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProgressBar_Inner
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 96
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c236a71fd169f74c8a7de8a03ecd0b0
+      internalID: -5581956015464806101
       vertices: []
       indices: 
       edges: []
