@@ -121,38 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &174168784 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5019008844020599643, guid: c27d8b7339919ab4cb2f2ff36b1c4a82,
-    type: 3}
-  m_PrefabInstance: {fileID: 5019008844352796467}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &174168785
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174168784}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0034, y: 0.0051}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5716, y: 0.67}
-  m_EdgeRadius: 0
 --- !u!4 &174168789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5019008844020599646, guid: c27d8b7339919ab4cb2f2ff36b1c4a82,
@@ -320,38 +288,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1311010908 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2549335078062789393, guid: 55844b68ef591944d8ea9ba01be690e9,
-    type: 3}
-  m_PrefabInstance: {fileID: 2549335078582984939}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1311010909
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311010908}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.014528394, y: 0.061680377}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5188856, y: 0.42917907}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5795195, y: 0.5839087}
-  m_EdgeRadius: 0
 --- !u!4 &1311010913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2549335078062789396, guid: 55844b68ef591944d8ea9ba01be690e9,
@@ -556,11 +492,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1238167520}
     m_Modifications:
-    - target: {fileID: 2549335078062789393, guid: 55844b68ef591944d8ea9ba01be690e9,
-        type: 3}
-      propertyPath: m_Name
-      value: Milkweed
-      objectReference: {fileID: 0}
     - target: {fileID: 2549335078062789396, guid: 55844b68ef591944d8ea9ba01be690e9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -616,30 +547,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1030572165, guid: 55844b68ef591944d8ea9ba01be690e9, type: 3}
-      propertyPath: InitialDragPeriod
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030572165, guid: 55844b68ef591944d8ea9ba01be690e9, type: 3}
-      propertyPath: MaxSharpness
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030572165, guid: 55844b68ef591944d8ea9ba01be690e9, type: 3}
-      propertyPath: SharpnessIncrease
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2549335078062789397, guid: 55844b68ef591944d8ea9ba01be690e9,
+    - target: {fileID: 2549335078062789393, guid: 55844b68ef591944d8ea9ba01be690e9,
         type: 3}
-      propertyPath: StartingPhysical
-      value: 1
+      propertyPath: m_Name
+      value: Milkweed
       objectReference: {fileID: 0}
-    - target: {fileID: 2549335078062789397, guid: 55844b68ef591944d8ea9ba01be690e9,
-        type: 3}
-      propertyPath: Physical
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2549335078062789392, guid: 55844b68ef591944d8ea9ba01be690e9, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55844b68ef591944d8ea9ba01be690e9, type: 3}
 --- !u!1001 &4683096910716721658
 PrefabInstance:
@@ -808,6 +721,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4683096912424196121, guid: 884e7505bbe47e34789499e48a0cf340,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0860219
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683096912424196121, guid: 884e7505bbe47e34789499e48a0cf340,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.8279562
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683096912424196121, guid: 884e7505bbe47e34789499e48a0cf340,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0143343955
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683096912424196121, guid: 884e7505bbe47e34789499e48a0cf340,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.8948811
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884e7505bbe47e34789499e48a0cf340, type: 3}
 --- !u!1001 &5019008844352796467
@@ -817,11 +750,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1238167520}
     m_Modifications:
-    - target: {fileID: 5019008844020599643, guid: c27d8b7339919ab4cb2f2ff36b1c4a82,
-        type: 3}
-      propertyPath: m_Name
-      value: Fly Agaric
-      objectReference: {fileID: 0}
     - target: {fileID: 5019008844020599646, guid: c27d8b7339919ab4cb2f2ff36b1c4a82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -877,25 +805,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1224005809, guid: c27d8b7339919ab4cb2f2ff36b1c4a82, type: 3}
-      propertyPath: InitialDragPeriod
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1224005809, guid: c27d8b7339919ab4cb2f2ff36b1c4a82, type: 3}
-      propertyPath: MaxSharpness
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1224005809, guid: c27d8b7339919ab4cb2f2ff36b1c4a82, type: 3}
-      propertyPath: SharpnessIncrease
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8367162786274523344, guid: c27d8b7339919ab4cb2f2ff36b1c4a82,
+    - target: {fileID: 5019008844020599643, guid: c27d8b7339919ab4cb2f2ff36b1c4a82,
         type: 3}
-      propertyPath: StartingPhysical
-      value: 1
+      propertyPath: m_Name
+      value: Fly Agaric
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 5019008844020599642, guid: c27d8b7339919ab4cb2f2ff36b1c4a82, type: 3}
+    - {fileID: 9003600051735081712, guid: c27d8b7339919ab4cb2f2ff36b1c4a82, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c27d8b7339919ab4cb2f2ff36b1c4a82, type: 3}
 --- !u!1001 &7557541586297434866
 PrefabInstance:
@@ -912,12 +828,12 @@ PrefabInstance:
     - target: {fileID: 7557541584491770857, guid: 09429c3524cbb404ab5f3c231bae6c38,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 1.899
       objectReference: {fileID: 0}
     - target: {fileID: 7557541584491770857, guid: 09429c3524cbb404ab5f3c231bae6c38,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.174
       objectReference: {fileID: 0}
     - target: {fileID: 7557541584491770857, guid: 09429c3524cbb404ab5f3c231bae6c38,
         type: 3}

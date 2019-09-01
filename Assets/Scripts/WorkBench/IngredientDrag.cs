@@ -9,14 +9,19 @@ public class IngredientDrag : MonoBehaviour
     [Header("Runtime")]
     public float Sharpness;
 
-    BoxCollider2D collider;
+    BoxCollider2D boxCollider;
     Ingredient ingredient;
-
+    Vector2 startPosition;
     void Start()
     {
         Sharpness = InitialSharpness;
-        collider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         ingredient = GetComponent<Ingredient>();
+    }
+
+    void OnMouseDown()
+    {
+        startPosition = transform.position;
     }
 
     void OnMouseDrag()
@@ -33,7 +38,7 @@ public class IngredientDrag : MonoBehaviour
         Sharpness = InitialSharpness;
 
         // Figure out where we dropped
-        Vector2 origin = transform.position + collider.offset.WithZ(0);
+        Vector2 origin = transform.position + boxCollider.offset.WithZ(0);
         // Physics2D.OverlapBoxAll(origin, collider.size, 0, LayerMask.GetMask(""));
         var hit = Physics2D.Raycast(MousePosition, Vector2.zero, 0, LayerMask.GetMask("Tool"));
         if (hit == false) return;
@@ -45,7 +50,7 @@ public class IngredientDrag : MonoBehaviour
         }
         else
         {
-            // Return ingredient to where it was
+            transform.position = startPosition;
         }
     }
 

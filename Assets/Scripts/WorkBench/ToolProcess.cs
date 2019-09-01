@@ -20,7 +20,7 @@ public class ToolProcess : MonoBehaviour
         progressBar = GetComponentInChildren<ProgressBar>();
     }
 
-    public bool CanProcess(Ingredient ingredient) => (ingredient.Physical & tool.AcceptedPhysical) > 0;
+    public bool CanProcess(Ingredient ingredient) => this.ingredient == null && (ingredient.Physical & tool.AcceptedPhysical) > 0;
 
     public void StartProcess(Ingredient ingredient)
     {

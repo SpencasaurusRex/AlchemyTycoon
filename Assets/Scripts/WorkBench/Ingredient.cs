@@ -22,3 +22,10 @@ public enum PhysicalTrait
     Powder = 2,
     Liquid = 4
 }
+
+public enum IngredientType
+{
+    FlyAmanita,
+    MilkWeed,
+    Powder,
+}
