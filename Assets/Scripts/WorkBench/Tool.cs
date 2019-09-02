@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 public class Tool : MonoBehaviour
 {
@@ -7,6 +8,10 @@ public class Tool : MonoBehaviour
     public float[] Additions;
 
     public IngredientType AcceptedTypes;
+    public Color Tint;
+    public ProcessType ProcessType;
+
+    [ShowIf("ProcessType", ProcessType.OneResultType)]
     public IngredientType ResultType;
 
     ToolProcess process;
@@ -15,4 +20,10 @@ public class Tool : MonoBehaviour
     {
         process = GetComponent<ToolProcess>();
     }
+}
+
+public enum ProcessType
+{
+    OneResultType,
+    NoChange
 }

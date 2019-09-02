@@ -25,4 +25,9 @@ public class Ingredient : MonoBehaviour
         IngredientType = type;
         sr.sprite = GameController.Instance.GetSprite(type);
     }
+
+    public void Tint(Color color)
+    {
+        sr.color = sr.color * color;
+    }
 }

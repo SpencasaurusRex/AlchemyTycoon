@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7557541584491770863}
   - component: {fileID: 7557541584491770860}
   m_Layer: 8
-  m_Name: Alembic 1
+  m_Name: Grill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,8 +55,10 @@ MonoBehaviour:
   - 0.1
   - -0.2
   - 0
-  AcceptedTypes: 128
-  ResultType: 64
+  AcceptedTypes: 63
+  Tint: {r: 0.44705883, g: 0.44705883, b: 0.44705883, a: 0}
+  ProcessType: 1
+  ResultType: 8
 --- !u!114 &2523679034120313867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b484ddde9dde044eb28217f005429d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxProcessTime: 8
+  MaxProcessTime: 3
 --- !u!212 &7557541584491770863
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -222,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 5798452199218347605, guid: 0952bc0181b80c24dacc23c4b0b73aaa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.40625
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5798452199218347605, guid: 0952bc0181b80c24dacc23c4b0b73aaa,
         type: 3}

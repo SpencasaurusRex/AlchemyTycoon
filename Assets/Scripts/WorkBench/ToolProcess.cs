@@ -80,6 +80,10 @@ public class ToolProcess : MonoBehaviour
             }
         }
 
-        ingredient.SetType(tool.ResultType);
+        if (tool.ProcessType == ProcessType.OneResultType)
+        {
+            ingredient.SetType(tool.ResultType);
+        }
+        ingredient.Tint(tool.Tint);
     }
 }

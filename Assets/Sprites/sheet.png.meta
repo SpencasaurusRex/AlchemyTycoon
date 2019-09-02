@@ -22,7 +22,7 @@ TextureImporter:
     second: sheet_5
   - first:
       213: 4530623484691778272
-    second: sheet_6
+    second: Garden_Name
   - first:
       213: -5581956015464806101
     second: ProgressBar_Inner
@@ -133,7 +133,7 @@ TextureImporter:
     second: pressurizer
   - first:
       213: -4294464135343857242
-    second: calcifier
+    second: calcinator
   - first:
       213: 5182346603733836655
     second: grill
@@ -372,48 +372,6 @@ TextureImporter:
       bones: []
       spriteID: efb1ca03f54a91544ae31c577b055af8
       internalID: -7054820123952135176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sheet_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d24438d2d0e49140a7ccdfd2d6ce566
-      internalID: 4530623484691778272
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sheet_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba75cadf85066954ba9d043338055252
-      internalID: 3038985000587531000
       vertices: []
       indices: 
       edges: []
@@ -839,48 +797,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_36
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c239b499f2621544b6c5d3f2fb63fd7
-      internalID: -4666756510880264869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sheet_37
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb4916fe98d708841bf077353768c9a4
-      internalID: -3986187285796142972
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: arrow
       rect:
         serializedVersion: 2
@@ -897,27 +813,6 @@ TextureImporter:
       bones: []
       spriteID: 7e0f8345ca4edad498a7e1146d6ae760
       internalID: -9218115008462819005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sheet_39
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab2bcead7efd16b4e95dd06fdc4301f6
-      internalID: 2096794751010941262
       vertices: []
       indices: 
       edges: []
@@ -986,7 +881,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: calcifier
+      name: calcinator
       rect:
         serializedVersion: 2
         x: 96
@@ -1049,90 +944,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_46
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 537e07033a7c11b46811cb5f7aab3b71
-      internalID: 3752806198092373919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sheet_47
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb5b4ccd680479a41abc8047295a7306
-      internalID: 5126698597468343190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sheet_48
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 563731297a0c1b94d9b6c84fa2b33b40
-      internalID: -4065470274024804433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sheet_49
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51c2896f6e4f5f54eb05a15dab635019
-      internalID: -2186017444305452852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: ProgressBar_Inner
       rect:
         serializedVersion: 2
@@ -1162,7 +973,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1170,6 +981,27 @@ TextureImporter:
       bones: []
       spriteID: fe41b6ec58da1de47b78fb1608246c03
       internalID: 8015492745623666938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garden_Name
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 152
+        width: 40
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dfa46e6f0e469747916fb5aa57d187a
+      internalID: 4530623484691778272
       vertices: []
       indices: 
       edges: []

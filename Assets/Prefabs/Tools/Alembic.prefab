@@ -56,6 +56,8 @@ MonoBehaviour:
   - -0.2
   - 0
   AcceptedTypes: 128
+  Tint: {r: 1, g: 1, b: 1, a: 1}
+  ProcessType: 0
   ResultType: 64
 --- !u!114 &2523679034120313867
 MonoBehaviour:
@@ -69,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b484ddde9dde044eb28217f005429d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxProcessTime: 8
+  MaxProcessTime: 4
 --- !u!212 &7557541584491770863
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -222,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 5798452199218347605, guid: 0952bc0181b80c24dacc23c4b0b73aaa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.40625
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5798452199218347605, guid: 0952bc0181b80c24dacc23c4b0b73aaa,
         type: 3}
