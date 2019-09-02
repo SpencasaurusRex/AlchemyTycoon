@@ -36,10 +36,12 @@ public class IngredientDrag : MonoBehaviour
         Vector2 origin = transform.position + collider.offset.WithZ(0);
         // Physics2D.OverlapBoxAll(origin, collider.size, 0, LayerMask.GetMask(""));
         var hit = Physics2D.Raycast(MousePosition, Vector2.zero, 0, LayerMask.GetMask("Tool"));
-        var tool = hit.collider.gameObject.GetComponent<Tool>();
+        if (hit == false) return;
+
+        var tool = hit.collider.gameObject.GetComponent<ToolProcess>();
         if (tool.CanProcess(ingredient))
         {
-            tool.Ingredient = ingredient;
+            tool.StartProcess(ingredient);
         }
         else
         {
