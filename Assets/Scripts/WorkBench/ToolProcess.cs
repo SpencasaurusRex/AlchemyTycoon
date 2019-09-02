@@ -12,12 +12,14 @@ public class ToolProcess : MonoBehaviour
     Tool tool;
     Ingredient ingredient;
     ProgressBar progressBar;
+    SceneObject sceneObject;
 
     void Start()
     {
         toolUI = GetComponentInChildren<ToolUI>();
         tool = GetComponent<Tool>();
         progressBar = GetComponentInChildren<ProgressBar>();
+        sceneObject = GetComponent<SceneObject>();
     }
 
     public bool CanProcess(Ingredient ingredient) => this.ingredient == null && (ingredient.IngredientType & tool.AcceptedTypes) > 0;
@@ -26,7 +28,7 @@ public class ToolProcess : MonoBehaviour
     {
         // Hide and move ingredient
         this.ingredient = ingredient;
-        ingredient.GetComponent<SpriteRenderer>().enabled = false;
+        ingredient.SceneObject.Hide();
         ingredient.transform.position = transform.position;
 
         // Show progress bar
@@ -53,7 +55,7 @@ public class ToolProcess : MonoBehaviour
 
         // Move and show ingredient
         ingredient.transform.position += Vector3.right;
-        ingredient.GetComponent<SpriteRenderer>().enabled = true;
+        ingredient.SceneObject.Show();
         ingredient = null;
 
         // Hide progress bar

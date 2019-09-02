@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1030572165}
   - component: {fileID: 2549335078062789398}
   - component: {fileID: 1311010909}
+  - component: {fileID: -1532879441710462177}
   m_Layer: 0
   m_Name: Milkweed
   m_TagString: Untagged
@@ -50,9 +51,8 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  StartingPhysical: 1
+  StartIngredientType: 0
   IngredientType: 1
-  Physical: 1
 --- !u!114 &1030572165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,3 +146,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.71628475, y: 0.7206992}
   m_EdgeRadius: 0
+--- !u!114 &-1532879441710462177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549335078062789393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb88a50b2066314f830b3f2ead0ab57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

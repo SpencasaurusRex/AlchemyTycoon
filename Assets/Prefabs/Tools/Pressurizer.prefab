@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2523679034120313867}
   - component: {fileID: 7557541584491770863}
   - component: {fileID: 7557541584491770860}
+  - component: {fileID: -3128423613435833018}
   m_Layer: 8
   m_Name: Pressurizer
   m_TagString: Untagged
@@ -148,6 +149,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7610506, y: 0.69791365}
   m_EdgeRadius: 0
+--- !u!114 &-3128423613435833018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7557541584491770856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb88a50b2066314f830b3f2ead0ab57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6040746522455496618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,11 +168,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7557541584491770857}
     m_Modifications:
-    - target: {fileID: 5798452199218347606, guid: 0952bc0181b80c24dacc23c4b0b73aaa,
-        type: 3}
-      propertyPath: m_Name
-      value: ProgressBar
-      objectReference: {fileID: 0}
     - target: {fileID: 5798452199218347605, guid: 0952bc0181b80c24dacc23c4b0b73aaa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -264,6 +272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798452199218347606, guid: 0952bc0181b80c24dacc23c4b0b73aaa,
+        type: 3}
+      propertyPath: m_Name
+      value: ProgressBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0952bc0181b80c24dacc23c4b0b73aaa, type: 3}

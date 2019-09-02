@@ -20,7 +20,7 @@ public class Tool : MonoBehaviour
     {
         process = GetComponent<ToolProcess>();
     }
-}
+ }
 
 public enum ProcessType
 {

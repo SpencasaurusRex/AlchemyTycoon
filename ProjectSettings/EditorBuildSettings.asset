@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Workbench.unity
     guid: b2ada09962851d141b3bcf6490125218
+  - enabled: 1
+    path: Assets/Scenes/Garden.unity
+    guid: 367e02328872a7e41b2d34b2af93da14
+  - enabled: 0
+    path: Assets/Scenes/Main.unity
+    guid: 7a0eb91061374174c99342bbcd13cf01
   m_configObjects: {}

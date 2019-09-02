@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 5798452199218347604}
   - component: {fileID: 7723906818445835609}
   - component: {fileID: 6680466367118525860}
+  - component: {fileID: 4213646708610825066}
   m_Layer: 5
   m_Name: ToolUI
   m_TagString: Untagged
@@ -256,6 +257,18 @@ MonoBehaviour:
   ProgressBarOuter: {fileID: 5798452198532618510}
   ProgressBarInner: {fileID: 5798452198932606862}
   Arrow: {fileID: 8012341773286481448}
+--- !u!114 &4213646708610825066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798452199218347606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb88a50b2066314f830b3f2ead0ab57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8403830721108705155
 GameObject:
   m_ObjectHideFlags: 0

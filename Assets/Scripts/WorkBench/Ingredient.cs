@@ -10,13 +10,14 @@ public class Ingredient : MonoBehaviour
     [Header("Runtime")]
     [DisableInEditorMode]
     public IngredientType IngredientType;
+    public SceneObject SceneObject;
 
     SpriteRenderer sr;
 
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-
+        SceneObject = GetComponent<SceneObject>();
         SetType(StartIngredientType);
     }
 
