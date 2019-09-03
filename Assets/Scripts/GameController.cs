@@ -47,7 +47,6 @@ public class GameController : SerializedMonoBehaviour
     public void SwitchScene(int targetSceneIndex)
     {
         Scene targetScene = SceneManager.GetSceneByBuildIndex(targetSceneIndex);
-        print("TargetScene: " + targetScene.buildIndex + " CurrentScene: " + CurrentlyLoadedScene.buildIndex);
         if (targetScene == CurrentlyLoadedScene) return;
 
         var previousScene = CurrentlyLoadedScene;
@@ -58,7 +57,6 @@ public class GameController : SerializedMonoBehaviour
         {
             foreach (var obj in SceneObjects[previousScene])
             {
-                print(obj.gameObject.name);
                 obj.Hide(true);
             }
         }
@@ -68,7 +66,6 @@ public class GameController : SerializedMonoBehaviour
         {
             foreach (var obj in SceneObjects[CurrentlyLoadedScene])
             {
-                print(obj.gameObject.name);
                 obj.Show();
             }
         }
