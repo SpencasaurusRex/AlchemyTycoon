@@ -894,11 +894,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mortar & Pestle
       objectReference: {fileID: 0}
-    - target: {fileID: 3899005052076141236, guid: 884e7505bbe47e34789499e48a0cf340,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884e7505bbe47e34789499e48a0cf340, type: 3}
 --- !u!1001 &5019008844352796467

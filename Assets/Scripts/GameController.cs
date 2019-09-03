@@ -44,8 +44,10 @@ public class GameController : SerializedMonoBehaviour
     Dictionary<Scene, List<SceneObject>> SceneObjects = new Dictionary<Scene, List<SceneObject>>();
     public static bool CurrentScene(GameObject go) => go.scene == Instance.CurrentlyLoadedScene;
 
-    public void SwitchScene(Scene targetScene)
+    public void SwitchScene(int targetSceneIndex)
     {
+        Scene targetScene = SceneManager.GetSceneByBuildIndex(targetSceneIndex);
+        print("TargetScene: " + targetScene.buildIndex + " CurrentScene: " + CurrentlyLoadedScene.buildIndex);
         if (targetScene == CurrentlyLoadedScene) return;
 
         var previousScene = CurrentlyLoadedScene;
@@ -56,6 +58,7 @@ public class GameController : SerializedMonoBehaviour
         {
             foreach (var obj in SceneObjects[previousScene])
             {
+                print(obj.gameObject.name);
                 obj.Hide(true);
             }
         }
@@ -65,6 +68,7 @@ public class GameController : SerializedMonoBehaviour
         {
             foreach (var obj in SceneObjects[CurrentlyLoadedScene])
             {
+                print(obj.gameObject.name);
                 obj.Show();
             }
         }
