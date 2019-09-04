@@ -283,10 +283,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 806011172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49ae2fe2bf372b4bbe0b03e282474de, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bb88a50b2066314f830b3f2ead0ab57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetSceneIndex: 0
 --- !u!1001 &809448344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -643,6 +642,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 588038399528729046, guid: 83a3b82bc328b6b46bcb7afe133a3fca,
+        type: 3}
+      propertyPath: m_Name
+      value: Main Camera
+      objectReference: {fileID: 0}
     - target: {fileID: 588038399528729045, guid: 83a3b82bc328b6b46bcb7afe133a3fca,
         type: 3}
       propertyPath: orthographic size
@@ -682,11 +686,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ForceIntoRT
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 588038399528729046, guid: 83a3b82bc328b6b46bcb7afe133a3fca,
-        type: 3}
-      propertyPath: m_Name
-      value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 588038399528728874, guid: 83a3b82bc328b6b46bcb7afe133a3fca,
         type: 3}
