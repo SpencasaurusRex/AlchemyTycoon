@@ -474,5 +474,22 @@ PrefabInstance:
       propertyPath: TargetSceneIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 941614479, guid: 1dfdb4fab8936bb4e8a6c833b48fdddd, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 941614479, guid: 1dfdb4fab8936bb4e8a6c833b48fdddd, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 192
+      objectReference: {fileID: 0}
+    - target: {fileID: 941614479, guid: 1dfdb4fab8936bb4e8a6c833b48fdddd, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948635506443598744, guid: 1dfdb4fab8936bb4e8a6c833b48fdddd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 49.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dfdb4fab8936bb4e8a6c833b48fdddd, type: 3}
