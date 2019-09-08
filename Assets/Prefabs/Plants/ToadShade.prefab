@@ -57,7 +57,7 @@ MonoBehaviour:
   GrowthSprites:
   - {fileID: -1888837539432032468, guid: e0a2511fd721ce64caa6d0c89e353ed0, type: 3}
   - {fileID: -7054820123952135176, guid: e0a2511fd721ce64caa6d0c89e353ed0, type: 3}
-  - {fileID: 1949730731670058941, guid: e0a2511fd721ce64caa6d0c89e353ed0, type: 3}
+  - {fileID: -3627854407871609761, guid: e0a2511fd721ce64caa6d0c89e353ed0, type: 3}
   PlantSprite: {fileID: 3595900845875388977}
   Hydration: 0
   Growth: 0

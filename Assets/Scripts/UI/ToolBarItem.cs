@@ -13,7 +13,7 @@ public class ToolBarItem : MonoBehaviour
     Image img;
     RectTransform rectTransform;
 
-    void Start()
+    void Awake()
     {
         toolBar = GetComponentInParent<ToolBar>();
         img = GetComponent<Image>();
