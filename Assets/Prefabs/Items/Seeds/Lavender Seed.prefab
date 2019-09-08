@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7818563497195759348
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1628091365287308437, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_Name
+      value: Lavender Seed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308436, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308436, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308436, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308436, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308436, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308436, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308436, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308436, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308436, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308436, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308436, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308438, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -272350928928935694, guid: e0a2511fd721ce64caa6d0c89e353ed0,
+        type: 3}
+    - target: {fileID: 1628091365287308438, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628091365287308441, guid: fe7274ae2ccd28849b0686fe866cbef2,
+        type: 3}
+      propertyPath: PlantSpawn
+      value: 
+      objectReference: {fileID: 3025964751893225907, guid: bc05749ec3b8d124eb795151c8781bb9,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe7274ae2ccd28849b0686fe866cbef2, type: 3}

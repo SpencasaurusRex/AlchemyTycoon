@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MouseItem : MonoBehaviour
+public class MouseFollow : MonoBehaviour
 {
     
     void Update()

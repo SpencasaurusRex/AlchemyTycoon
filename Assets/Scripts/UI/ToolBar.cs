@@ -38,6 +38,7 @@ public class ToolBar : MonoBehaviour
         if (item.SpawnItem != null)
         {
             handItem = Instantiate(item.SpawnItem);
+            handItem.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition).WithZ(0);
         }
 
         item.Set(SelectedSprite, SelectedSize);
