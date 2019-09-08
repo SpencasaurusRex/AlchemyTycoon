@@ -21,8 +21,6 @@ public class GameController : SerializedMonoBehaviour
             return;
         }
         Instance = this;
-
-        // currentlyLoadedScene = SceneManager.GetSceneByName("Workbench");
     }
 
     void Start()
