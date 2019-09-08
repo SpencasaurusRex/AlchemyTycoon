@@ -4,22 +4,22 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 6530179738444782934
-    second: sheet_0
+    second: milkweed_sapling
   - first:
       213: 613435604629981061
-    second: sheet_1
+    second: fly_amanita_sapling
   - first:
       213: -3656531271222932061
-    second: sheet_2
+    second: arrow_root_sapling
   - first:
       213: 3930011312167392660
-    second: sheet_3
+    second: bloodgrass_sapling
   - first:
       213: -96796154962138083
-    second: sheet_4
+    second: lavender_sapling
   - first:
       213: -7054820123952135176
-    second: sheet_5
+    second: toadshade_sapling
   - first:
       213: 4530623484691778272
     second: Garden_Name
@@ -28,31 +28,31 @@ TextureImporter:
     second: ProgressBar_Inner
   - first:
       213: -2661919970533589962
-    second: sheet_8
+    second: planted_ground_2
   - first:
       213: 3038985000587531000
-    second: sheet_9
+    second: ground
   - first:
       213: 3216594195550930655
-    second: sheet_10
+    second: milkweed_adult
   - first:
       213: -3701851516310602662
-    second: sheet_11
+    second: fly_amanita_adult
   - first:
       213: 5893540339403691780
-    second: sheet_12
+    second: arrow_root_adult
   - first:
       213: -1254599994303000284
-    second: sheet_13
+    second: bloodgrass_adult
   - first:
       213: 1949730731670058941
-    second: sheet_14
+    second: lavender_adult
   - first:
       213: -3627854407871609761
-    second: sheet_15
+    second: toadshade_adult
   - first:
       213: -1888837539432032468
-    second: sheet_16
+    second: seedling
   - first:
       213: -1796502737815246115
     second: sheet_17
@@ -64,22 +64,22 @@ TextureImporter:
     second: ProgressBar_Outer
   - first:
       213: 2562169664635839239
-    second: sheet_20
+    second: milkweed_seed
   - first:
       213: -4946619765975422720
-    second: sheet_21
+    second: fly_amanita_seed
   - first:
       213: 2281915828476810391
-    second: sheet_22
+    second: arrow_root_seed
   - first:
       213: -1460219255197261928
-    second: sheet_23
+    second: bloodgrass_seed
   - first:
       213: -272350928928935694
-    second: sheet_24
+    second: lavender_seed
   - first:
       213: 3647273195039021549
-    second: sheet_25
+    second: toadshade_seed
   - first:
       213: 3504542958272820299
     second: sheet_26
@@ -157,10 +157,10 @@ TextureImporter:
     second: problem
   - first:
       213: 4530623484691778272
-    second: sheet_6
+    second: planted_ground_0
   - first:
       213: -5581956015464806101
-    second: sheet_7
+    second: planted_ground_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -257,7 +257,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sheet_0
+      name: milkweed_sapling
       rect:
         serializedVersion: 2
         x: 0
@@ -278,7 +278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_1
+      name: fly_amanita_sapling
       rect:
         serializedVersion: 2
         x: 32
@@ -299,7 +299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_2
+      name: arrow_root_sapling
       rect:
         serializedVersion: 2
         x: 64
@@ -320,7 +320,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_3
+      name: bloodgrass_sapling
       rect:
         serializedVersion: 2
         x: 96
@@ -341,7 +341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_4
+      name: lavender_sapling
       rect:
         serializedVersion: 2
         x: 128
@@ -362,7 +362,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_5
+      name: toadshade_sapling
       rect:
         serializedVersion: 2
         x: 160
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_10
+      name: milkweed_adult
       rect:
         serializedVersion: 2
         x: 0
@@ -404,7 +404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_11
+      name: fly_amanita_adult
       rect:
         serializedVersion: 2
         x: 32
@@ -425,7 +425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_12
+      name: arrow_root_adult
       rect:
         serializedVersion: 2
         x: 64
@@ -446,7 +446,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_13
+      name: bloodgrass_adult
       rect:
         serializedVersion: 2
         x: 96
@@ -467,7 +467,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_14
+      name: lavender_adult
       rect:
         serializedVersion: 2
         x: 128
@@ -488,7 +488,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_15
+      name: toadshade_adult
       rect:
         serializedVersion: 2
         x: 160
@@ -530,7 +530,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_20
+      name: milkweed_seed
       rect:
         serializedVersion: 2
         x: 0
@@ -551,7 +551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_21
+      name: fly_amanita_seed
       rect:
         serializedVersion: 2
         x: 32
@@ -572,7 +572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_22
+      name: arrow_root_seed
       rect:
         serializedVersion: 2
         x: 64
@@ -593,7 +593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_23
+      name: bloodgrass_seed
       rect:
         serializedVersion: 2
         x: 96
@@ -614,7 +614,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_24
+      name: lavender_seed
       rect:
         serializedVersion: 2
         x: 128
@@ -635,7 +635,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_25
+      name: toadshade_seed
       rect:
         serializedVersion: 2
         x: 160
@@ -992,7 +992,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_6
+      name: planted_ground_0
       rect:
         serializedVersion: 2
         x: 192
@@ -1000,7 +1000,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1013,7 +1013,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_7
+      name: planted_ground_1
       rect:
         serializedVersion: 2
         x: 224
@@ -1021,7 +1021,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1034,7 +1034,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_8
+      name: planted_ground_2
       rect:
         serializedVersion: 2
         x: 256
@@ -1042,7 +1042,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1055,7 +1055,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_9
+      name: ground
       rect:
         serializedVersion: 2
         x: 192
@@ -1063,7 +1063,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1076,7 +1076,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sheet_16
+      name: seedling
       rect:
         serializedVersion: 2
         x: 288
@@ -1084,7 +1084,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

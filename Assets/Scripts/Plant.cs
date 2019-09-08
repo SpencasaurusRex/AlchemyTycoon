@@ -15,16 +15,15 @@ public class Plant : MonoBehaviour
     public float Health; // 0 to 1
     public PlantState state;
 
-    void Start()
+    public bool PlantSeed()
     {
-        
-    }
+        if (state == PlantState.Planted) return false;
 
-    public void PlantSeed()
-    {
         Hydration = MaxHydration * .5f;
         Growth = 0;
         Health = .5f;
+        state = PlantState.Planted;
+        return true;
     }
 
     void Update()
@@ -33,6 +32,14 @@ public class Plant : MonoBehaviour
 
         Growth += Time.deltaTime;
         Hydration -= Time.deltaTime;
+        if (Hydration <= HealthyHydration.Max && Hydration >= HealthyHydration.Min)
+        {
+            Health += .5f * Time.deltaTime / MaxGrowth;
+        }
+        else
+        {
+            Health -= Time.deltaTime / MaxGrowth;
+        }
     }
 }
 

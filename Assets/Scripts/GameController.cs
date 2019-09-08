@@ -1,6 +1,7 @@
 ﻿using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,7 @@ public class GameController : SerializedMonoBehaviour
 
     [Header("Configuration")]
     public GameObject MainUI;
+    public string[] ManagedScenes;
 
     void Awake()
     {
@@ -20,13 +22,30 @@ public class GameController : SerializedMonoBehaviour
         }
         Instance = this;
 
-        currentlyLoadedScene = SceneManager.GetSceneByName("Workbench");
-
+        // currentlyLoadedScene = SceneManager.GetSceneByName("Workbench");
     }
 
     void Start()
     {
         MainUI.SetActive(true);
+
+        // Setup scenes dynamically
+        int targetScene = 0;
+        foreach (var sceneName in ManagedScenes)
+        {
+            var scene = SceneManager.GetSceneByName(sceneName);
+
+            if (!scene.IsValid())
+            {
+                SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+            }
+            else if (currentlyLoadedScene.buildIndex == -1)
+            {
+                targetScene = scene.buildIndex;
+            }
+        }
+
+        SwitchScene(targetScene);
     }
 
     #region Ingredient Properties
