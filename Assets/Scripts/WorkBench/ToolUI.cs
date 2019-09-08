@@ -19,7 +19,7 @@ public class ToolUI : MonoBehaviour
 
     public void Processing(bool processing)
     {
-        if (GameController.CurrentScene(gameObject))
+        if (GameController.IsInCurrentScene(gameObject))
         {
             ProgressBarOuter.enabled = processing;
             ProgressBarInner.enabled = processing;

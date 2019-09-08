@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameController : SerializedMonoBehaviour
 {
     public static GameController Instance;
-    
+
+    [Header("Configuration")]
+    public GameObject MainUI;
+
     void Awake()
     {
         if (Instance != null)
@@ -17,8 +20,13 @@ public class GameController : SerializedMonoBehaviour
         }
         Instance = this;
 
-        CurrentlyLoadedScene = SceneManager.GetSceneByName("Workbench");
+        currentlyLoadedScene = SceneManager.GetSceneByName("Workbench");
 
+    }
+
+    void Start()
+    {
+        MainUI.SetActive(true);
     }
 
     #region Ingredient Properties
@@ -39,18 +47,18 @@ public class GameController : SerializedMonoBehaviour
     #endregion
 
     #region Scene Management
-
-    public Scene CurrentlyLoadedScene;
+    [HideInInspector]
+    public Scene currentlyLoadedScene;
     Dictionary<Scene, List<SceneObject>> SceneObjects = new Dictionary<Scene, List<SceneObject>>();
-    public static bool CurrentScene(GameObject go) => go.scene == Instance.CurrentlyLoadedScene;
+    public static bool IsInCurrentScene(GameObject go) => go.scene == Instance.currentlyLoadedScene;
 
     public void SwitchScene(int targetSceneIndex)
     {
         Scene targetScene = SceneManager.GetSceneByBuildIndex(targetSceneIndex);
-        if (targetScene == CurrentlyLoadedScene) return;
+        if (targetScene == currentlyLoadedScene) return;
 
-        var previousScene = CurrentlyLoadedScene;
-        CurrentlyLoadedScene = targetScene;
+        var previousScene = currentlyLoadedScene;
+        currentlyLoadedScene = targetScene;
 
         // Turn off visuals in previous scene
         if (SceneObjects.ContainsKey(previousScene))
@@ -61,10 +69,12 @@ public class GameController : SerializedMonoBehaviour
             }
         }
 
+        SceneManager.SetActiveScene(currentlyLoadedScene);
+
         // Turn on visuals in new scene
-        if (SceneObjects.ContainsKey(CurrentlyLoadedScene))
+        if (SceneObjects.ContainsKey(currentlyLoadedScene))
         {
-            foreach (var obj in SceneObjects[CurrentlyLoadedScene])
+            foreach (var obj in SceneObjects[currentlyLoadedScene])
             {
                 obj.Show();
             }
@@ -81,6 +91,11 @@ public class GameController : SerializedMonoBehaviour
         if (!list.Contains(obj))
         {
             SceneObjects[obj.gameObject.scene].Add(obj);
+        }
+
+        if (!IsInCurrentScene(obj.gameObject))
+        {
+            obj.Hide();
         }
     }
     #endregion
