@@ -1,16 +1,12 @@
 ﻿using Sirenix.OdinInspector;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SceneObject : MonoBehaviour
 {
-    SpriteRenderer sr;
-    Canvas cv;
-    Camera cam;
-    AudioListener aud;
-
-    [ShowInInspector]
-    public bool Invisible { get; set; }
+   [ShowInInspector]
+    public Component[] KeepActive;
 
     public delegate void HideEvent();
     public event HideEvent OnHide;
@@ -18,55 +14,61 @@ public class SceneObject : MonoBehaviour
     public delegate void ShowEvent();
     public event ShowEvent OnShow;
 
-    public List<MonoBehaviour> Disable;
+    Dictionary<Component, bool> PreviouslyActive = new Dictionary<Component, bool>();
 
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        cv = GetComponent<Canvas>();
-        cam = GetComponent<Camera>();
-        aud = GetComponent<AudioListener>();
-
         GameController.Instance.Register(this);
     }
 
     public void Show()
     {
-        if (sr != null) sr.enabled = !Invisible;
-        if (cv != null) cv.enabled = !Invisible;
-        if (cam != null) cam.enabled = true;
-        if (aud != null) aud.enabled = true;
-
         OnShow?.Invoke();
 
-        foreach (var behaviours in Disable)
+        foreach (var behaviour in GetComponents<Behaviour>())
         {
-            behaviours.enabled = true;
+            if (PreviouslyActive.TryGetValue(behaviour, out bool enabled) && enabled)
+            {
+                behaviour.enabled = true;
+            }
         }
+        foreach (var renderer in GetComponents<Renderer>())
+        {
+            if (PreviouslyActive.TryGetValue(renderer, out bool enabled) && enabled)
+            {
+                renderer.enabled = true;
+            }
+        }
+        foreach (var collider in GetComponents<Collider>())
+        {
+            if (PreviouslyActive.TryGetValue(collider, out bool enabled) && enabled)
+            {
+                collider.enabled = true;
+            }
+        }
+
+        PreviouslyActive.Clear();
     }
 
-    public void Hide(bool switchingScene = false)
+    public void Hide()
     {
-        if (switchingScene)
-        {
-            var s = false;
-            var c = false;
-            if (sr != null) s = sr.enabled;
-            if (cv != null) c = cv.enabled;
-
-            Invisible = !(s || c);
-        }
-
-        if (sr != null) sr.enabled = false;
-        if (cv != null) cv.enabled = false;
-        if (cam != null) cam.enabled = false;
-        if (aud != null) aud.enabled = false;
-
         OnHide?.Invoke();
 
-        foreach (var behaviours in Disable)
+        foreach (var behaviour in GetComponents<Behaviour>())
         {
-            behaviours.enabled = false;
+            if (behaviour == this) continue;
+            PreviouslyActive.Add(behaviour, behaviour.enabled);
+            behaviour.enabled = false;
+        }
+        foreach(var renderer in GetComponents<Renderer>())
+        {
+            PreviouslyActive.Add(renderer, renderer.enabled);
+            renderer.enabled = false;
+        }
+        foreach (var collider in GetComponents<Collider>())
+        {
+            PreviouslyActive.Add(collider, collider.enabled);
+            collider.enabled = true;
         }
     }
 }

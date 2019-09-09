@@ -1827,8 +1827,7 @@ PrefabInstance:
         type: 3}
       propertyPath: SpawnItem
       value: 
-      objectReference: {fileID: 8798127578312657505, guid: 975d12561d57f0047ace03e028105bb5,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2890702086187244082, guid: 7041a7847e5ded4479919c72625e6a10,
         type: 3}
       propertyPath: SpawnItem

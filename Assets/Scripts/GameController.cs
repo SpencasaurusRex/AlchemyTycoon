@@ -24,7 +24,6 @@ public class GameController : SerializedMonoBehaviour
 
     void Start()
     {
-
         MainUI.SetActive(true);
 
         // Setup scenes dynamically
@@ -42,7 +41,6 @@ public class GameController : SerializedMonoBehaviour
                 targetScene = scene.buildIndex;
             }
         }
-
         SwitchScene(targetScene);
     }
 
@@ -79,7 +77,7 @@ public class GameController : SerializedMonoBehaviour
         {
             foreach (var obj in SceneObjects[previousScene])
             {
-                obj.Hide(true);
+                obj.Hide();
             }
         }
 

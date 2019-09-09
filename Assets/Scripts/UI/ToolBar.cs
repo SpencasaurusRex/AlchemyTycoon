@@ -21,7 +21,24 @@ public class ToolBar : MonoBehaviour
     void Awake()
     {
         sceneObject = GetComponent<SceneObject>();
-        sceneObject.Disable.Add(this);
+        sceneObject.OnHide += OnHide;
+        sceneObject.OnShow += OnShow;
+    }
+
+    void OnHide()
+    {
+        if (handItem != null)
+        {
+            handItem.SetActive(false);
+        }
+    }
+
+    void OnShow()
+    {
+        if (handItem != null)
+        {
+            handItem.SetActive(true);
+        }
     }
 
     void Start()
