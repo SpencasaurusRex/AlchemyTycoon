@@ -265,6 +265,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7557541584491770862, guid: 29fa7c1192ea04f4ba0c0aa0b44855fa,
+        type: 3}
+      propertyPath: Changes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29fa7c1192ea04f4ba0c0aa0b44855fa, type: 3}
 --- !u!1 &806011172 stripped
@@ -640,6 +645,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 588038399528729046, guid: 83a3b82bc328b6b46bcb7afe133a3fca,
+        type: 3}
+      propertyPath: m_Name
+      value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 588038399528729046, guid: 83a3b82bc328b6b46bcb7afe133a3fca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 588038399528729045, guid: 83a3b82bc328b6b46bcb7afe133a3fca,
         type: 3}
       propertyPath: orthographic size
@@ -684,16 +699,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ClearFlags
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 588038399528729046, guid: 83a3b82bc328b6b46bcb7afe133a3fca,
-        type: 3}
-      propertyPath: m_Name
-      value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 588038399528729046, guid: 83a3b82bc328b6b46bcb7afe133a3fca,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 588038399528728874, guid: 83a3b82bc328b6b46bcb7afe133a3fca,
         type: 3}
@@ -972,6 +977,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683096912424196120, guid: 884e7505bbe47e34789499e48a0cf340,
+        type: 3}
+      propertyPath: Changes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683096912424196120, guid: 884e7505bbe47e34789499e48a0cf340,
+        type: 3}
+      propertyPath: Changes.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884e7505bbe47e34789499e48a0cf340, type: 3}

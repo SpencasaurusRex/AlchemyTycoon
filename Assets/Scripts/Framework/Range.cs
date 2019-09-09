@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Sirenix.OdinInspector;
+using System;
 
 [Serializable]
+[InlineProperty]
 public struct Range
 {
     public float Min;

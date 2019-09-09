@@ -1,9 +1,8 @@
-﻿using Sirenix.OdinInspector;
+﻿using System;
 using UnityEngine;
 
-[InlineProperty]
-[SerializeField]
-public struct IngredientProperty
+[Serializable]
+[CreateAssetMenu]
+public class IngredientProperty : ScriptableObject
 {
-    public Sprite Sprite;
 }

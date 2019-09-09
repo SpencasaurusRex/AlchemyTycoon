@@ -1,5 +1,6 @@
 ﻿using Sirenix.OdinInspector;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ToolBar : MonoBehaviour
@@ -14,7 +15,14 @@ public class ToolBar : MonoBehaviour
     public int UnselectedSize;
 
     GameObject handItem;
+    SceneObject sceneObject;
     int SelectedIndex = 0;
+
+    void Awake()
+    {
+        sceneObject = GetComponent<SceneObject>();
+        sceneObject.Disable.Add(this);
+    }
 
     void Start()
     {

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5be550af02646343acea49f8f9166dc, type: 3}
+  m_Name: Weak Healing
+  m_EditorClassIdentifier: 
+  RequiredProperties:
+  - {fileID: 11400000, guid: 6b5f1678d6d61934a83e65a91ed99f54, type: 2}
+  - {fileID: 11400000, guid: 5aad2b6b6f36f864bbf35a6f01669efc, type: 2}
+  CannotHave:
+  - {fileID: 11400000, guid: ca3b0c4c560e36847b7d2c7929bc16b7, type: 2}
+  - {fileID: 11400000, guid: 8af2e9c970ec9bd4e97e91a1ebc13e35, type: 2}

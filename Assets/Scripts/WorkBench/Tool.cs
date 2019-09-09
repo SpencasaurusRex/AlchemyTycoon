@@ -1,11 +1,11 @@
 ﻿using Sirenix.OdinInspector;
+using System;
 using UnityEngine;
 
 public class Tool : MonoBehaviour
 {
     [Header("Configure")]
-    public float[] Multipliers;
-    public float[] Additions;
+    public PropertyChange[] Changes;
 
     public IngredientType AcceptedTypes;
     public Color Tint;
@@ -21,6 +21,13 @@ public class Tool : MonoBehaviour
         process = GetComponent<ToolProcess>();
     }
  }
+
+[Serializable]
+public class PropertyChange
+{
+    public IngredientProperty From;
+    public IngredientProperty To;
+}
 
 public enum ProcessType
 {

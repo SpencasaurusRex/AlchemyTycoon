@@ -47,10 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16127f3c1ac84f3469f4812584e0d67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attributes:
-  - 0
-  - 0
-  - 0
+  Properties:
+  - {fileID: 11400000, guid: ca3b0c4c560e36847b7d2c7929bc16b7, type: 2}
+  - {fileID: 11400000, guid: 6b5f1678d6d61934a83e65a91ed99f54, type: 2}
   StartIngredientType: 1
   IngredientType: 1
   SceneObject: {fileID: 0}

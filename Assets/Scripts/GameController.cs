@@ -1,7 +1,6 @@
 ﻿using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +24,7 @@ public class GameController : SerializedMonoBehaviour
 
     void Start()
     {
+
         MainUI.SetActive(true);
 
         // Setup scenes dynamically
@@ -49,16 +49,13 @@ public class GameController : SerializedMonoBehaviour
     #region Ingredient Properties
     
     [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.OneLine)]
-    public Dictionary<IngredientType, IngredientProperty> IngredientProperties = new Dictionary<IngredientType, IngredientProperty>()
+    public Dictionary<IngredientType, Sprite> IngredientSprites = new Dictionary<IngredientType, Sprite>()
     {
-        { IngredientType.FlyAmanita, new IngredientProperty() },
-        { IngredientType.MilkWeed, new IngredientProperty() },
-        { IngredientType.Powder, new IngredientProperty() },
     };
 
     public Sprite GetSprite(IngredientType type)
     {
-        return IngredientProperties[type].Sprite;
+        return IngredientSprites[type];
     }
 
     #endregion
@@ -116,6 +113,11 @@ public class GameController : SerializedMonoBehaviour
         }
     }
     #endregion
+
+    #region Recipes
+    public List<PropertyInteraction> Interactions;
+    public List<PropertyResults> Results;
+    #endregion Recipes
 }
 
 [Flags]

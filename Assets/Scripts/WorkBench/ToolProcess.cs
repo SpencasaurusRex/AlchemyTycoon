@@ -64,23 +64,7 @@ public class ToolProcess : MonoBehaviour
 
     void ModifyIngredients()
     {
-        for (int i = 0; i < ingredient.Attributes.Length; i++)
-        {
-            if (tool.Multipliers[i] == 0)
-            {
-                ingredient.Attributes[i] = tool.Additions[i];
-                continue;
-            }
-
-            if (ingredient.Attributes[i] > 0)
-            {
-                ingredient.Attributes[i] = ingredient.Attributes[i] * tool.Multipliers[i] + tool.Additions[i];
-            }
-            else
-            {
-                ingredient.Attributes[i] = ingredient.Attributes[i] / tool.Multipliers[i] + tool.Additions[i];
-            }
-        }
+        // TODO: modify properties
 
         if (tool.ProcessType == ProcessType.OneResultType)
         {

@@ -174,8 +174,8 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 4372381551759688375, guid: e0a2511fd721ce64caa6d0c89e353ed0, type: 3}
-    - {fileID: -863169582964885348, guid: e0a2511fd721ce64caa6d0c89e353ed0, type: 3}
     - {fileID: -8302254863492273045, guid: e0a2511fd721ce64caa6d0c89e353ed0, type: 3}
+    - {fileID: -863169582964885348, guid: e0a2511fd721ce64caa6d0c89e353ed0, type: 3}
     - {fileID: -832198905909771304, guid: e0a2511fd721ce64caa6d0c89e353ed0, type: 3}
     - {fileID: 662046916731068474, guid: e0a2511fd721ce64caa6d0c89e353ed0, type: 3}
     - {fileID: -5679681372999991991, guid: e0a2511fd721ce64caa6d0c89e353ed0, type: 3}
@@ -186,10 +186,10 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: IngredientProperties
+    - Name: IngredientSprites
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[IngredientType, Assembly-CSharp],[IngredientProperty,
-        Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[IngredientType, Assembly-CSharp],[UnityEngine.Sprite,
+        UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
       Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[IngredientType, Assembly-CSharp]],
@@ -213,14 +213,20 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: $v
-      Entry: 7
-      Data: IngredientProperty, Assembly-CSharp
-    - Name: Sprite
       Entry: 10
       Data: 0
     - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -231,32 +237,8 @@ MonoBehaviour:
       Entry: 3
       Data: 4
     - Name: $v
-      Entry: 7
-      Data: IngredientProperty, Assembly-CSharp
-    - Name: Sprite
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
-      Entry: 7
-      Data: IngredientProperty, Assembly-CSharp
-    - Name: Sprite
       Entry: 10
       Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -267,14 +249,8 @@ MonoBehaviour:
       Entry: 3
       Data: 8
     - Name: $v
-      Entry: 7
-      Data: IngredientProperty, Assembly-CSharp
-    - Name: Sprite
       Entry: 10
       Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -285,14 +261,8 @@ MonoBehaviour:
       Entry: 3
       Data: 16
     - Name: $v
-      Entry: 7
-      Data: IngredientProperty, Assembly-CSharp
-    - Name: Sprite
       Entry: 10
       Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -303,14 +273,8 @@ MonoBehaviour:
       Entry: 3
       Data: 32
     - Name: $v
-      Entry: 7
-      Data: IngredientProperty, Assembly-CSharp
-    - Name: Sprite
       Entry: 10
       Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -321,14 +285,8 @@ MonoBehaviour:
       Entry: 3
       Data: 64
     - Name: $v
-      Entry: 7
-      Data: IngredientProperty, Assembly-CSharp
-    - Name: Sprite
       Entry: 10
       Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -339,14 +297,8 @@ MonoBehaviour:
       Entry: 3
       Data: 128
     - Name: $v
-      Entry: 7
-      Data: IngredientProperty, Assembly-CSharp
-    - Name: Sprite
       Entry: 10
       Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -362,6 +314,25 @@ MonoBehaviour:
   - Garden
   currentlyLoadedScene:
     m_Handle: 0
+  Interactions:
+  - {fileID: 11400000, guid: eb0bde661cb905147806c6bf4966cde6, type: 2}
+  - {fileID: 11400000, guid: 4003b42922b3b8a44840c18b8a52a021, type: 2}
+  Results:
+  - {fileID: 11400000, guid: 6b231700d160b464885da96678427216, type: 2}
+  - {fileID: 11400000, guid: 01ec0d37cc3cc2442bce48df9b1d877e, type: 2}
+  - {fileID: 11400000, guid: a32a4c0e2452772449f846793b98796d, type: 2}
+  - {fileID: 11400000, guid: 8e00d95495d1acb4698f2c02a40ab35d, type: 2}
+  - {fileID: 11400000, guid: 0b54416e4f4f9e843af3ef860143e185, type: 2}
+  - {fileID: 11400000, guid: e1e6d5804c5d8e742a5dc7d72c7c4cd7, type: 2}
+  - {fileID: 11400000, guid: 07b32d5eef28ef5409258fb7efa1144d, type: 2}
+  - {fileID: 11400000, guid: ecf5e6cd453e6dc4abc2456b3d78a41c, type: 2}
+  - {fileID: 11400000, guid: 86a2fe18017872441992edaf942cb608, type: 2}
+  - {fileID: 11400000, guid: 1a7dae977d4bf9b429eef7cf9b633cf3, type: 2}
+  - {fileID: 11400000, guid: 931b92abe2151ac4e86caa35c9709d83, type: 2}
+  - {fileID: 11400000, guid: 6783dd948cb364a429a701f0f6dc0df5, type: 2}
+  - {fileID: 11400000, guid: 944e11638c5c9a443af6394ebf801cdc, type: 2}
+  - {fileID: 11400000, guid: 7be0ae4a69eee0a4193e6c2540adc5fd, type: 2}
+  - {fileID: 11400000, guid: 9dcc592d016444f42aaa5d92775e4a45, type: 2}
 --- !u!1001 &8231143662900210277
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -48,14 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af84a4226ad16544d8a8a0fcdc4a31e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Multipliers:
-  - 1.25
-  - 0.8
-  - 1
-  Additions:
-  - 0.1
-  - -0.2
-  - 0
+  Changes:
+  - From: {fileID: 11400000, guid: 8af2e9c970ec9bd4e97e91a1ebc13e35, type: 2}
+    To: {fileID: 0}
   AcceptedTypes: 255
   Tint: {r: 1, g: 1, b: 1, a: 1}
   ProcessType: 1
@@ -168,6 +163,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7557541584491770857}
     m_Modifications:
+    - target: {fileID: 5798452199218347606, guid: 0952bc0181b80c24dacc23c4b0b73aaa,
+        type: 3}
+      propertyPath: m_Name
+      value: ProgressBar
+      objectReference: {fileID: 0}
     - target: {fileID: 5798452199218347605, guid: 0952bc0181b80c24dacc23c4b0b73aaa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -272,11 +272,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5798452199218347606, guid: 0952bc0181b80c24dacc23c4b0b73aaa,
-        type: 3}
-      propertyPath: m_Name
-      value: ProgressBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0952bc0181b80c24dacc23c4b0b73aaa, type: 3}

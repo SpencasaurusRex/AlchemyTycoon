@@ -1,4 +1,5 @@
 ﻿using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SceneObject : MonoBehaviour
@@ -10,6 +11,14 @@ public class SceneObject : MonoBehaviour
 
     [ShowInInspector]
     public bool Invisible { get; set; }
+
+    public delegate void HideEvent();
+    public event HideEvent OnHide;
+
+    public delegate void ShowEvent();
+    public event ShowEvent OnShow;
+
+    public List<MonoBehaviour> Disable;
 
     void Start()
     {
@@ -27,6 +36,13 @@ public class SceneObject : MonoBehaviour
         if (cv != null) cv.enabled = !Invisible;
         if (cam != null) cam.enabled = true;
         if (aud != null) aud.enabled = true;
+
+        OnShow?.Invoke();
+
+        foreach (var behaviours in Disable)
+        {
+            behaviours.enabled = true;
+        }
     }
 
     public void Hide(bool switchingScene = false)
@@ -45,5 +61,12 @@ public class SceneObject : MonoBehaviour
         if (cv != null) cv.enabled = false;
         if (cam != null) cam.enabled = false;
         if (aud != null) aud.enabled = false;
+
+        OnHide?.Invoke();
+
+        foreach (var behaviours in Disable)
+        {
+            behaviours.enabled = false;
+        }
     }
 }

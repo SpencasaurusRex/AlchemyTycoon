@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb88a50b2066314f830b3f2ead0ab57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Disable: []
 --- !u!1001 &203528894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,6 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb88a50b2066314f830b3f2ead0ab57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Disable: []
 --- !u!212 &938804908
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1000,6 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb88a50b2066314f830b3f2ead0ab57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Disable: []
 --- !u!1001 &1285209480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1266,6 +1269,7 @@ GameObject:
   - component: {fileID: 1515546148}
   - component: {fileID: 1515546149}
   - component: {fileID: 1515546150}
+  - component: {fileID: 1515546151}
   m_Layer: 0
   m_Name: GridHighlight
   m_TagString: Untagged
@@ -1299,7 +1303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b678a1e8161929d4c81aee95302d6997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sharpness: 30
+  Sharpness: 20
 --- !u!212 &1515546150
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1349,6 +1353,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1515546151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515546147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb88a50b2066314f830b3f2ead0ab57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Disable: []
 --- !u!1 &1591843631
 GameObject:
   m_ObjectHideFlags: 0

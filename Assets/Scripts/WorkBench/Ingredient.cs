@@ -1,10 +1,11 @@
 ﻿using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
     [Header("Configure")]
-    public float[] Attributes;
+    public List<IngredientProperty> Properties;
     public IngredientType StartIngredientType;
 
     [Header("Runtime")]
