@@ -57,17 +57,20 @@ public class SceneObject : MonoBehaviour
         foreach (var behaviour in GetComponents<Behaviour>())
         {
             if (behaviour == this) continue;
+            if (KeepActive.Contains(behaviour)) continue;
             PreviouslyActive.Add(behaviour, behaviour.enabled);
             behaviour.enabled = false;
         }
         foreach(var renderer in GetComponents<Renderer>())
         {
             PreviouslyActive.Add(renderer, renderer.enabled);
+            if (KeepActive.Contains(renderer)) continue;
             renderer.enabled = false;
         }
         foreach (var collider in GetComponents<Collider>())
         {
             PreviouslyActive.Add(collider, collider.enabled);
+            if (KeepActive.Contains(collider)) continue;
             collider.enabled = true;
         }
     }
