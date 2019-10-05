@@ -1,6 +1,7 @@
 ﻿using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -108,6 +109,15 @@ public class GameController : SerializedMonoBehaviour
         if (!IsInCurrentScene(obj.gameObject))
         {
             obj.Hide();
+        }
+    }
+
+    public void Unregister(SceneObject obj)
+    {
+        var scene = obj.gameObject.scene;
+        if (SceneObjects.ContainsKey(scene))
+        {
+            SceneObjects[scene].Remove(obj);
         }
     }
     #endregion

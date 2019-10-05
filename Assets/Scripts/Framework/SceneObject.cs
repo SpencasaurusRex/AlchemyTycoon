@@ -74,4 +74,9 @@ public class SceneObject : MonoBehaviour
             collider.enabled = true;
         }
     }
+
+    public void OnDestroy()
+    {
+        GameController.Instance.Unregister(this);
+    }
 }
