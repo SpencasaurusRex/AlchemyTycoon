@@ -19,6 +19,7 @@ public class ClickController : MonoBehaviour
     // Serializable variables
     public List<Tag> Draggables;
     public List<Tag> Droppables;
+    public List<Tag> Clickables;
     public int MinimumDragDistance = 10;
 
     // Runtime variables
@@ -26,6 +27,7 @@ public class ClickController : MonoBehaviour
     float timeSinceMousePress;
     Vector2 clickPositionPixels;
     int currentState;
+    GameObject dragTarget;
 
     void Start()
     {
@@ -67,17 +69,18 @@ public class ClickController : MonoBehaviour
         // Stopped clicking
         else if (mousePressed && !Input.GetMouseButton(LEFT))
         {
-            mousePressed = false;
-            timeSinceMousePress = 0;
-
             if (currentState == CLICK)
             {
                 PerformClick();
             }
             else if (currentState == DRAG)
             {
-                
+                FinishDrag();
             }
+
+            mousePressed = false;
+            timeSinceMousePress = 0;
+            currentState = CLICK;
         }
     }
 
@@ -88,27 +91,43 @@ public class ClickController : MonoBehaviour
         if (Cast(clickPosition, Draggables, out var info))
         {
             print("Dragging " + info.collider.gameObject.name);
+            dragTarget = info.collider.gameObject;
             currentState = DRAG;
         }
-        print("Misclick");
-        currentState = MISCLICK;
+        else
+        {
+            print("Misclick");
+            currentState = MISCLICK;
+        }
     }
 
     void PerformDrag()
     {
-        
+        dragTarget.transform.localPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 1);
     }
 
     void PerformClick()
     {
         print("Click");
+        Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Cast(clickPosition, Clickables, out var info))
+        {
+
+        }
+        else
+        {
+
+        }
     }
 
-    bool Cast(Vector3 position, List<Tag> targets, out RaycastHit hitInfo)
+    void FinishDrag()
     {
-        Ray ray = new Ray(position, Vector3.forward);
-        RaycastHit[] hits = Physics.RaycastAll(ray, 100);
-        
+        dragTarget.transform.position = dragTarget.transform.localPosition.WithZ(0);
+    }
+
+    bool Cast(Vector3 position, List<Tag> targets, out RaycastHit2D hitInfo)
+    {
+        RaycastHit2D[] hits = Physics2D.RaycastAll(position, Vector2.zero);
         hits = hits.OrderBy(x => x.distance).ToArray();
 
         foreach (var hit in hits)
@@ -119,7 +138,7 @@ public class ClickController : MonoBehaviour
                 return true;
             }
         }
-        hitInfo = new RaycastHit();
+        hitInfo = new RaycastHit2D();
         return false;
     }
 }

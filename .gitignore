@@ -11,6 +11,7 @@
 /[Mm]emoryCaptures/
 /Assets/Plugins/
 /Assets/TextMesh Pro/
+/Assets/IUnified/
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 
