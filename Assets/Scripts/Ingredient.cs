@@ -1,9 +1,15 @@
 using UnityEngine;
 
-public class Ingredient : MonoBehaviour
+[RequireComponent(typeof(Draggable))]
+public class Ingredient : MonoBehaviour, IDraggable
 {
+    public bool CanDropOn(GameObject obj)
+    {
+        return true;
+    }
+
     void Awake() 
     {
-        // DragDropController.    
+        GetComponent<Draggable>().behaviour.Result = this;
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using UnityEngine;
 
@@ -16,18 +16,18 @@ public class ClickController : MonoBehaviour
     // Singleton reference
     public static ClickController Instance; 
     
-    // Serializable variables
-    public List<Tag> Draggables;
-    public List<Tag> Droppables;
-    public List<Tag> Clickables;
+    // Configuration
     public int MinimumDragDistance = 10;
 
-    // Runtime variables
+    // Runtime
     bool mousePressed;
     float timeSinceMousePress;
     Vector2 clickPositionPixels;
     int currentState;
     GameObject dragTarget;
+    Draggable dragComp;
+
+    Vector3 MousePositionPixels => Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
     void Start()
     {
@@ -86,31 +86,26 @@ public class ClickController : MonoBehaviour
 
     void StartDrag()
     {
-        Vector3 clickPosition = Camera.main.ScreenToWorldPoint(clickPositionPixels);
-        print("Casting at " + clickPosition);
-        if (Cast(clickPosition, Draggables, out var info))
+        if (Cast(MousePositionPixels, typeof(Draggable), out var info))
         {
-            print("Dragging " + info.collider.gameObject.name);
             dragTarget = info.collider.gameObject;
+            dragComp = dragTarget.GetComponent<Draggable>();
             currentState = DRAG;
         }
         else
         {
-            print("Misclick");
             currentState = MISCLICK;
         }
     }
 
     void PerformDrag()
     {
-        dragTarget.transform.localPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 1);
+        dragTarget.transform.localPosition = MousePositionPixels + new Vector3(0, 0, 1);
     }
 
     void PerformClick()
     {
-        print("Click");
-        Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Cast(clickPosition, Clickables, out var info))
+        if (Cast(MousePositionPixels, typeof(Clickable), out var info))
         {
 
         }
@@ -122,17 +117,28 @@ public class ClickController : MonoBehaviour
 
     void FinishDrag()
     {
+        if (Cast(MousePositionPixels, typeof(DropReceiver), out var info))
+        {
+            var receiver = info.collider.gameObject.GetComponent<DropReceiver>();
+            if (dragComp.CanDropOn(info.collider.gameObject))
+            {
+                receiver.Receive(dragTarget);
+            }
+        }
+
         dragTarget.transform.position = dragTarget.transform.localPosition.WithZ(0);
+        dragTarget = null;
+        dragComp = null;
     }
 
-    bool Cast(Vector3 position, List<Tag> targets, out RaycastHit2D hitInfo)
+    bool Cast(Vector3 position, Type component, out RaycastHit2D hitInfo)
     {
         RaycastHit2D[] hits = Physics2D.RaycastAll(position, Vector2.zero);
         hits = hits.OrderBy(x => x.distance).ToArray();
 
         foreach (var hit in hits)
         {
-            if (hit.collider.gameObject.GetComponent<TagComponent>().HasAny(targets))
+            if (hit.collider.gameObject.GetComponent(component) != null)
             {
                 hitInfo = hit;
                 return true;

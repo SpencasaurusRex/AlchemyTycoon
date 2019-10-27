@@ -6,15 +6,15 @@ public class Draggable : MonoBehaviour
     // Serialized variables
     public IDraggableContainer behaviour;
 
-    public bool ValidDrop(GameObject obj)
+    public bool CanDropOn(GameObject obj)
     {
-        return behaviour.Result.ValidDrop(obj);
+        return behaviour.Result.CanDropOn(obj);
     }
 }
 
 public interface IDraggable
 {
-    bool ValidDrop(GameObject obj);
+    bool CanDropOn(GameObject obj);
 }
 
 [Serializable]
