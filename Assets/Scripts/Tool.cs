@@ -1,4 +1,6 @@
 ﻿using Sirenix.OdinInspector;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(DropReceiver))]
@@ -11,6 +13,7 @@ public class Tool : MonoBehaviour, IDropReceiver
     [EnumToggleButtons]
     public PhysicalState AcceptedPhysical;
     public float ProcessTime = 20;
+    public List<AttributeAffector> Affectors;
 
     // Runtime
     int currentState;
@@ -56,6 +59,14 @@ public class Tool : MonoBehaviour, IDropReceiver
 
     void FinishProcessing()
     {
+        foreach (var affector in Affectors)
+        {
+            if (processingTarget.Attributes.Count > affector.Index)
+            {
+                processingTarget.Attributes[affector.Index].Intensity += affector.Delta;
+            }
+        }
+
         processingRender.enabled = true;
         processingTarget.transform.position = transform.position + new Vector3(1, 0);
 
@@ -67,4 +78,11 @@ public class Tool : MonoBehaviour, IDropReceiver
     {
         GetComponent<DropReceiver>().behaviour.Result = this;
     }
+}
+
+[Serializable]
+public class AttributeAffector
+{
+    public int Index;
+    public int Delta;
 }

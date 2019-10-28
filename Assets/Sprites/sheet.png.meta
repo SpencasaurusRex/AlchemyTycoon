@@ -91,7 +91,7 @@ TextureImporter:
     second: sheet_28
   - first:
       213: -3807297515833748856
-    second: bottle
+    second: bottle_outer
   - first:
       213: 4372381551759688375
     second: milkweed
@@ -161,6 +161,9 @@ TextureImporter:
   - first:
       213: -5581956015464806101
     second: planted_ground_1
+  - first:
+      213: -1040183049365507321
+    second: bottle_inner
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -656,7 +659,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bottle
+      name: bottle_outer
       rect:
         serializedVersion: 2
         x: 288
@@ -1092,6 +1095,27 @@ TextureImporter:
       bones: []
       spriteID: 7c4dd21a2bc1fbc4db5579fd1848933a
       internalID: -1888837539432032468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottle_inner
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1ff2d58974da741afa2c6c3250258e
+      internalID: -1040183049365507321
       vertices: []
       indices: 
       edges: []
