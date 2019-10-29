@@ -90,6 +90,7 @@ public class ClickController : MonoBehaviour
         {
             dragTarget = info.collider.gameObject;
             dragComp = dragTarget.GetComponent<Draggable>();
+            dragComp.StartDrag();
             currentState = DRAG;
         }
         else
@@ -100,7 +101,7 @@ public class ClickController : MonoBehaviour
 
     void PerformDrag()
     {
-        dragTarget.transform.localPosition = MousePositionPixels + new Vector3(0, 0, 1);
+        dragTarget.transform.localPosition = MousePositionPixels.WithZ(0);
     }
 
     void PerformClick()
@@ -120,13 +121,15 @@ public class ClickController : MonoBehaviour
         if (Cast(MousePositionPixels, typeof(DropReceiver), out var info))
         {
             var receiver = info.collider.gameObject.GetComponent<DropReceiver>();
-            if (dragComp.CanDropOn(info.collider.gameObject))
+            if (receiver.Receive(dragTarget))
             {
-                receiver.Receive(dragTarget);
+                dragComp.Drop(receiver);
             }
+            else dragComp.Drop(null);
         }
+        else dragComp.Drop(null);
 
-        dragTarget.transform.position = dragTarget.transform.localPosition.WithZ(0);
+        dragTarget.transform.position = dragTarget.transform.localPosition;
         dragTarget = null;
         dragComp = null;
     }

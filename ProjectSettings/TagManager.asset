@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - Tool
-  - GardenObject
+  - 
+  - 
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tool
+    uniqueID: 1518372133
+    locked: 0
+  - name: Bottle
+    uniqueID: 311373755
+    locked: 0
+  - name: Ingredient
+    uniqueID: 2780882987
+    locked: 0
+  - name: Holding
+    uniqueID: 2904054113
     locked: 0

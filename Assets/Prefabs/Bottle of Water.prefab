@@ -66,8 +66,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 311373755
+  m_SortingLayer: 2
   m_SortingOrder: -1
   m_Sprite: {fileID: -1040183049365507321, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
@@ -92,7 +92,8 @@ GameObject:
   - component: {fileID: 1098649634678002817}
   - component: {fileID: 1098649634678002818}
   - component: {fileID: 1098649634678002823}
-  - component: {fileID: 1098649634678002816}
+  - component: {fileID: 1147679609}
+  - component: {fileID: 1147679612}
   m_Layer: 0
   m_Name: Bottle of Water
   m_TagString: Untagged
@@ -150,8 +151,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 311373755
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -3807297515833748856, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
@@ -180,7 +181,33 @@ MonoBehaviour:
   behaviour:
     ObjectField: {fileID: 0}
     ResultType: 
---- !u!114 &1098649634678002816
+--- !u!61 &1147679609
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098649634678002819}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0028734207, y: 0.0057468414}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7069135, y: 0.7471409}
+  m_EdgeRadius: 0
+--- !u!114 &1147679612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,8 +216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1098649634678002819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3893bdfeefbf2f4c9247b41eb7e9c86, type: 3}
+  m_Script: {fileID: 11500000, guid: b5b64af37d3d1d241929f9283d38834f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PhysicalState: 4
-  Attributes: []
+  sprite: {fileID: 0}

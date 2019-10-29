@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,18 +5,26 @@ using UnityEngine;
 [RequireComponent(typeof(Draggable))]
 public class Ingredient : MonoBehaviour, IDraggable
 {
-    public PhysicalState PhysicalState;
+    public static int OrderIndex;
 
+    public PhysicalState PhysicalState;
     public List<IngredientAttribute> Attributes;
 
-    public bool CanDropOn(GameObject obj)
+    SpriteRenderer sr;
+
+    public void StartDrag()
     {
-        return true;
+    }
+
+    public void Drop(DropReceiver receiver)
+    {
+        sr.sortingOrder = OrderIndex++;
     }
 
     void Awake() 
     {
         GetComponent<Draggable>().behaviour.Result = this;
+        sr = GetComponent<SpriteRenderer>();
     }   
 }
 

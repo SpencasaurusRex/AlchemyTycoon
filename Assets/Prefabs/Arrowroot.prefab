@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1514084309
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -863169582964885348, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
@@ -138,3 +138,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PhysicalState: 1
+  Attributes:
+  - intensity: 1
+    Type: Charming Aura
+    Unlocked: 1
+  - intensity: 1
+    Type: Disease Resistance
+    Unlocked: 0
