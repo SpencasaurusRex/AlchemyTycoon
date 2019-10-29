@@ -139,11 +139,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b21ef48afa0244b8dcc06a372379f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AcceptedPhysical: 7
-  ProcessTime: 2
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  AcceptedPhysical: 000000000200000001000000
+  ProcessTime: 20
   Affectors:
   - Index: 0
     Delta: -1
+  PhysicalConversions: 
 --- !u!114 &1955302334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6380028459549064967
 RectTransform:
   m_ObjectHideFlags: 0
@@ -375,20 +385,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1527403097608716887, guid: c6d2c12e70cda814ca019770bd1f4095,
+    - target: {fileID: 1527403097032257932, guid: c6d2c12e70cda814ca019770bd1f4095,
         type: 3}
-      propertyPath: m_Value
+      propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1527403097032257932, guid: c6d2c12e70cda814ca019770bd1f4095,
         type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527403097032257932, guid: c6d2c12e70cda814ca019770bd1f4095,
-        type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6d2c12e70cda814ca019770bd1f4095, type: 3}

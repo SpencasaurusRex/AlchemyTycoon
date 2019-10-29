@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 958411288564338231}
   - component: {fileID: 1955302334}
   m_Layer: 0
-  m_Name: Mortar and Pestle
+  m_Name: Grill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 1518372133
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7936603521824548063, guid: e0a2511fd721ce64caa6d0c89e353ed0,
+  m_Sprite: {fileID: 5182346603733836655, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00096428394, y: -0.00059747696}
+  m_Offset: {x: 0.0030449927, y: 0.018446684}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7904861, y: 0.68395877}
+  m_Size: {x: 0.76643044, y: 0.7220471}
   m_EdgeRadius: 0
 --- !u!114 &958411288564338227
 MonoBehaviour:

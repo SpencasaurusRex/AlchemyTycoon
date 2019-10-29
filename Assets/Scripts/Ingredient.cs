@@ -5,12 +5,31 @@ using UnityEngine;
 [RequireComponent(typeof(Draggable))]
 public class Ingredient : MonoBehaviour, IDraggable
 {
-    public PhysicalState PhysicalState;
+    [SerializeField]
+    PhysicalState physicalState;
+
+    public PhysicalState PhysicalState
+    {
+        get => physicalState;
+        set
+        {
+            sr.sprite = PowderSprite;
+            sr.color = PowerColor;
+            physicalState = value;
+        }
+    }
+
     public List<IngredientAttribute> Attributes;
+    public Color PowerColor;
+    public Sprite PowderSprite;
+
+    // Runtime
+    SpriteRenderer sr;
 
     void Awake()
     {
         GetComponent<Draggable>().behaviour.Result = this;
+        sr = GetComponent<SpriteRenderer>();
     }
 
     public void StartDrag()
@@ -27,11 +46,12 @@ public class Ingredient : MonoBehaviour, IDraggable
 }
 
 [Flags]
+[Serializable]
 public enum PhysicalState
 {
-    Raw = 1,
-    Powder = 2,
-    Bottle = 4
+    Raw,
+    Powder,
+    Bottle
 }
 
 [Serializable]

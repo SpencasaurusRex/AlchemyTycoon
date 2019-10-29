@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1514084309
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -863169582964885348, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3893bdfeefbf2f4c9247b41eb7e9c86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PhysicalState: 1
+  physicalState: 0
   Attributes:
   - intensity: 1
     Type: Charming Aura
@@ -145,3 +145,6 @@ MonoBehaviour:
   - intensity: 1
     Type: Disease Resistance
     Unlocked: 0
+  PowerColor: {r: 0.47843137, g: 0.45882353, b: 0.41568628, a: 1}
+  PowderSprite: {fileID: -1308681137950721158, guid: e0a2511fd721ce64caa6d0c89e353ed0,
+    type: 3}

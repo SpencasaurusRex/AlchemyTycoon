@@ -100,7 +100,7 @@ BoxCollider2D:
   m_Offset: {x: -0.03126192, y: 0.012690783}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.4863913, y: 0.4922235}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3893bdfeefbf2f4c9247b41eb7e9c86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PhysicalState: 1
+  physicalState: 0
   Attributes:
   - intensity: 1
     Type: Spores
@@ -145,3 +145,6 @@ MonoBehaviour:
   - intensity: 1
     Type: Seal Wounds
     Unlocked: 0
+  PowerColor: {r: 0.7019608, g: 0.58431375, b: 0.5529412, a: 1}
+  PowderSprite: {fileID: -1308681137950721158, guid: e0a2511fd721ce64caa6d0c89e353ed0,
+    type: 3}

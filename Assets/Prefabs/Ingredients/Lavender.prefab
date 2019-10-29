@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3893bdfeefbf2f4c9247b41eb7e9c86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PhysicalState: 1
+  physicalState: 0
   Attributes:
   - intensity: 1
     Type: Soothing Fragrance
@@ -144,3 +144,6 @@ MonoBehaviour:
   - intensity: 1
     Type: Neutralize
     Unlocked: 0
+  PowerColor: {r: 0.5176471, g: 0.60784316, b: 0.89411765, a: 1}
+  PowderSprite: {fileID: -1308681137950721158, guid: e0a2511fd721ce64caa6d0c89e353ed0,
+    type: 3}

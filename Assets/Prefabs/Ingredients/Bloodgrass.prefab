@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1514084309
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -832198905909771304, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
@@ -100,7 +100,7 @@ BoxCollider2D:
   m_Offset: {x: 0.07362372, y: 0.030171633}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.45278597, y: 0.4575075}
+    pivot: {x: 0.5363817, y: 0.49638903}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3893bdfeefbf2f4c9247b41eb7e9c86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PhysicalState: 1
+  physicalState: 0
   Attributes:
   - intensity: 1
     Type: Perpetual Heat
@@ -145,3 +145,6 @@ MonoBehaviour:
   - intensity: 1
     Type: Life Drain
     Unlocked: 0
+  PowerColor: {r: 0.7058824, g: 0.1254902, b: 0.16470589, a: 1}
+  PowderSprite: {fileID: -1308681137950721158, guid: e0a2511fd721ce64caa6d0c89e353ed0,
+    type: 3}

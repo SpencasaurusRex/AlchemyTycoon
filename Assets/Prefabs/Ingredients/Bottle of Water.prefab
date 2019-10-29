@@ -67,7 +67,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 311373755
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_Sprite: {fileID: -1040183049365507321, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 311373755
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -3807297515833748856, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
@@ -219,4 +219,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b64af37d3d1d241929f9283d38834f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  childSprite: {fileID: 1098649634327843488}
+  Liquid: Water

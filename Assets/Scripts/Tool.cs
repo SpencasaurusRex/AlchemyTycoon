@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(DropReceiver))]
-public class Tool : MonoBehaviour, IDropReceiver
+public class Tool : SerializedMonoBehaviour, IDropReceiver
 {
     const int WAITING = 0;
     const int PROCESSING = 1;
 
     // Configuration
-    [EnumToggleButtons]
-    public PhysicalState AcceptedPhysical;
+    public List<PhysicalState> AcceptedPhysical;
     public float ProcessTime = 20;
     public List<AttributeAffector> Affectors;
+    public PhysicalState[] PhysicalConversions;
+
 
     // Runtime
     int currentState;
@@ -29,7 +30,7 @@ public class Tool : MonoBehaviour, IDropReceiver
         if (ingredient == null) return false;
 
         var renderer = obj.GetComponent<SpriteRenderer>();
-        if ((ingredient.PhysicalState & AcceptedPhysical) == 0) return false;
+        if (!AcceptedPhysical.Contains(ingredient.PhysicalState)) return false;
 
         StartProcessing(ingredient, renderer);
         return true;
@@ -64,6 +65,16 @@ public class Tool : MonoBehaviour, IDropReceiver
             if (processingTarget.Attributes.Count > affector.Index)
             {
                 processingTarget.Attributes[affector.Index].Intensity += affector.Delta;
+            }
+        }
+
+        if (PhysicalConversions.Length > (int)processingTarget.PhysicalState)
+        {
+            PhysicalState conversion = PhysicalConversions[(int)processingTarget.PhysicalState];
+            if (conversion > 0)
+            {
+                // TODO change sprite based on this
+                processingTarget.PhysicalState = conversion;
             }
         }
 
