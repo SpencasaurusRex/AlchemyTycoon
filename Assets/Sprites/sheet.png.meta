@@ -164,6 +164,12 @@ TextureImporter:
   - first:
       213: -1040183049365507321
     second: bottle_inner
+  - first:
+      213: 2773894759634173557
+    second: ProgressBarSmall_Outer
+  - first:
+      213: 343618825027738751
+    second: ProgressBarSmall_Inner
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -1108,7 +1114,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1116,6 +1122,48 @@ TextureImporter:
       bones: []
       spriteID: db1ff2d58974da741afa2c6c3250258e
       internalID: -1040183049365507321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProgressBarSmall_Outer
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 112
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b4c0c369ce0eb4b9a3f08c1d3cc53b
+      internalID: 2773894759634173557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProgressBarSmall_Inner
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 96
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3780abf3dbfbf634bb9abdf480fbc6d8
+      internalID: 343618825027738751
       vertices: []
       indices: 
       edges: []
