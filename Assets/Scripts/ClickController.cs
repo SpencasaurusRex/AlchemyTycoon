@@ -108,7 +108,7 @@ public class ClickController : MonoBehaviour
     {
         if (Cast(MousePositionPixels, typeof(Clickable), out var info))
         {
-
+            
         }
         else
         {
@@ -137,7 +137,8 @@ public class ClickController : MonoBehaviour
     bool Cast(Vector3 position, Type component, out RaycastHit2D hitInfo)
     {
         RaycastHit2D[] hits = Physics2D.RaycastAll(position, Vector2.zero);
-        hits = hits.OrderBy(x => x.distance).ToArray();
+        // Oof
+        hits = hits.OrderByDescending(x => SortingLayer.GetLayerValueFromID(x.collider.GetComponent<SpriteRenderer>().sortingLayerID)).ThenByDescending(x => x.collider.GetComponent<SpriteRenderer>().sortingOrder).ToArray();
 
         foreach (var hit in hits)
         {
