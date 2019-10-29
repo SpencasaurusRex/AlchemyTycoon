@@ -108,7 +108,7 @@ public class ClickController : MonoBehaviour
     {
         if (Cast(MousePositionPixels, typeof(Clickable), out var info))
         {
-            
+            info.collider.gameObject.GetComponent<Clickable>().Click();
         }
         else
         {

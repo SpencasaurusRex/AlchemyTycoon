@@ -5,12 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(Draggable))]
 public class Ingredient : MonoBehaviour, IDraggable
 {
-    public static int OrderIndex;
-
     public PhysicalState PhysicalState;
     public List<IngredientAttribute> Attributes;
 
-    SpriteRenderer sr;
+    void Awake()
+    {
+        GetComponent<Draggable>().behaviour.Result = this;
+    }
 
     public void StartDrag()
     {
@@ -18,14 +19,11 @@ public class Ingredient : MonoBehaviour, IDraggable
 
     public void Drop(DropReceiver receiver)
     {
-        sr.sortingOrder = OrderIndex++;
     }
 
-    void Awake() 
+    public void Reorder(int siblingIndex)
     {
-        GetComponent<Draggable>().behaviour.Result = this;
-        sr = GetComponent<SpriteRenderer>();
-    }   
+    }
 }
 
 [Flags]
