@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5302101855707037971
+--- !u!1 &4663039924926139242
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5302101855707037968}
-  - component: {fileID: 5302101855707037969}
-  - component: {fileID: 5302101855707037970}
-  - component: {fileID: 5302101855707037974}
-  - component: {fileID: 1281372126}
+  - component: {fileID: 4663039924926139240}
+  - component: {fileID: 4663039924926139243}
+  - component: {fileID: 4663039924926139241}
+  - component: {fileID: 4663039924926139247}
+  - component: {fileID: 673845154117371423}
   m_Layer: 0
-  m_Name: Toad Legs
+  m_Name: IngredientMix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5302101855707037968
+--- !u!4 &4663039924926139240
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5302101855707037971}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.151, y: 0.015, z: 0}
+  m_GameObject: {fileID: 4663039924926139242}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.145, y: -2.057, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5302101855707037969
+--- !u!212 &4663039924926139243
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5302101855707037971}
+  m_GameObject: {fileID: 4663039924926139242}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -1514084309
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5679681372999991991, guid: e0a2511fd721ce64caa6d0c89e353ed0,
+  m_Sprite: {fileID: -1308681137950721158, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -84,23 +84,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5302101855707037970
+--- !u!61 &4663039924926139241
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5302101855707037971}
+  m_GameObject: {fileID: 4663039924926139242}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0043982863, y: -0.13601589}
+  m_Offset: {x: 0.0736236, y: 0.038654923}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5033331, y: 0.61969936}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -108,15 +108,15 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6858462, y: 0.7175665}
+  m_Size: {x: 0.8303311, y: 0.77943087}
   m_EdgeRadius: 0
---- !u!114 &5302101855707037974
+--- !u!114 &4663039924926139247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5302101855707037971}
+  m_GameObject: {fileID: 4663039924926139242}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 485cd1066ac935741ad4eefc3fa34eae, type: 3}
@@ -125,27 +125,20 @@ MonoBehaviour:
   behaviour:
     ObjectField: {fileID: 0}
     ResultType: 
---- !u!114 &1281372126
+--- !u!114 &673845154117371423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5302101855707037971}
+  m_GameObject: {fileID: 4663039924926139242}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 324f0813011f00042923f489e05a1375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  physicalState: 0
-  Ingredients:
-  - Attributes:
-    - intensity: 1
-      Type: Fertilize
-      Unlocked: 1
-    - intensity: 1
-      Type: Grease
-      Unlocked: 0
-  PowerColor: {r: 0.101960786, g: 0.47843137, b: 0.24313726, a: 1}
+  physicalState: 1
+  Ingredients: []
+  PowerColor: {r: 1, g: 1, b: 1, a: 1}
   PowderSprite: {fileID: -1308681137950721158, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}

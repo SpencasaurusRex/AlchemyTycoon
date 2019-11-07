@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5302101855707037969}
   - component: {fileID: 5302101855707037970}
   - component: {fileID: 5302101855707037974}
-  - component: {fileID: 5302101855707037975}
+  - component: {fileID: 778802816}
   m_Layer: 0
   m_Name: Lavender
   m_TagString: Untagged
@@ -124,7 +124,7 @@ MonoBehaviour:
   behaviour:
     ObjectField: {fileID: 0}
     ResultType: 
---- !u!114 &5302101855707037975
+--- !u!114 &778802816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,17 +133,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5302101855707037971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3893bdfeefbf2f4c9247b41eb7e9c86, type: 3}
+  m_Script: {fileID: 11500000, guid: 324f0813011f00042923f489e05a1375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   physicalState: 0
-  Attributes:
-  - intensity: 1
-    Type: Soothing Fragrance
-    Unlocked: 1
-  - intensity: 1
-    Type: Neutralize
-    Unlocked: 0
-  PowerColor: {r: 0.5176471, g: 0.60784316, b: 0.89411765, a: 1}
+  Ingredients:
+  - Attributes:
+    - intensity: 1
+      Type: Soothing Fragrance
+      Unlocked: 1
+    - intensity: 1
+      Type: Neutralize
+      Unlocked: 0
+  PowerColor: {r: 0.5176471, g: 0.5803922, b: 0.6901961, a: 1}
   PowderSprite: {fileID: -1308681137950721158, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}

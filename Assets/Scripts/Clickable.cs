@@ -8,7 +8,7 @@ public class Clickable : MonoBehaviour
 
     public bool Click()
     {
-        return behaviour.Result.Click();
+        return behaviour.Result?.Click() ?? false;
     }
 }
 

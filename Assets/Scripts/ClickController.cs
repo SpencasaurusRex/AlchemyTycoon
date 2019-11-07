@@ -86,7 +86,7 @@ public class ClickController : MonoBehaviour
 
     void StartDrag()
     {
-        if (Cast(MousePositionPixels, typeof(Draggable), out var info))
+        if (Cast(MousePositionPixels, typeof(Draggable), null, out var info))
         {
             dragTarget = info.collider.gameObject;
             dragComp = dragTarget.GetComponent<Draggable>();
@@ -106,7 +106,7 @@ public class ClickController : MonoBehaviour
 
     void PerformClick()
     {
-        if (Cast(MousePositionPixels, typeof(Clickable), out var info))
+        if (Cast(MousePositionPixels, typeof(Clickable), null, out var info))
         {
             info.collider.gameObject.GetComponent<Clickable>().Click();
         }
@@ -118,7 +118,7 @@ public class ClickController : MonoBehaviour
 
     void FinishDrag()
     {
-        if (Cast(MousePositionPixels, typeof(DropReceiver), out var info))
+        if (Cast(MousePositionPixels, typeof(DropReceiver), dragTarget, out var info))
         {
             var receiver = info.collider.gameObject.GetComponent<DropReceiver>();
             if (receiver.Receive(dragTarget))
@@ -134,7 +134,7 @@ public class ClickController : MonoBehaviour
         dragComp = null;
     }
 
-    bool Cast(Vector3 position, Type component, out RaycastHit2D hitInfo)
+    bool Cast(Vector3 position, Type component, GameObject ignore, out RaycastHit2D hitInfo)
     {
         RaycastHit2D[] hits = Physics2D.RaycastAll(position, Vector2.zero);
         // Oof
@@ -142,6 +142,7 @@ public class ClickController : MonoBehaviour
 
         foreach (var hit in hits)
         {
+            if (hit.collider.gameObject == ignore) continue;
             if (hit.collider.gameObject.GetComponent(component) != null)
             {
                 hitInfo = hit;

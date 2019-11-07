@@ -19,20 +19,20 @@ public class Tool : SerializedMonoBehaviour, IDropReceiver
     // Runtime
     int currentState;
     float currentProcessingProgress;
-    Ingredient processingTarget;
+    IngredientMix processingTarget;
     SpriteRenderer processingRender;
 
     public bool Receive(GameObject obj)
     {
         if (currentState == PROCESSING) return false;
 
-        var ingredient = obj.GetComponent<Ingredient>();
-        if (ingredient == null) return false;
+        var ingredientMix = obj.GetComponent<IngredientMix>();
+        if (ingredientMix == null) return false;
 
         var renderer = obj.GetComponent<SpriteRenderer>();
-        if (!AcceptedPhysical.Contains(ingredient.PhysicalState)) return false;
+        if (!AcceptedPhysical.Contains(ingredientMix.PhysicalState)) return false;
 
-        StartProcessing(ingredient, renderer);
+        StartProcessing(ingredientMix, renderer);
         return true;
     }
 
@@ -49,7 +49,7 @@ public class Tool : SerializedMonoBehaviour, IDropReceiver
         }
     }
 
-    void StartProcessing(Ingredient ing, SpriteRenderer renderer)
+    void StartProcessing(IngredientMix ing, SpriteRenderer renderer)
     {
         processingTarget = ing;
         processingRender = renderer;
@@ -62,10 +62,7 @@ public class Tool : SerializedMonoBehaviour, IDropReceiver
     {
         foreach (var affector in Affectors)
         {
-            if (processingTarget.Attributes.Count > affector.Index)
-            {
-                processingTarget.Attributes[affector.Index].Intensity += affector.Delta;
-            }
+            processingTarget.Modify(affector);
         }
 
         if (PhysicalConversions.Length > (int)processingTarget.PhysicalState)

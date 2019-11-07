@@ -2,47 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Draggable))]
-public class Ingredient : MonoBehaviour, IDraggable
+[Serializable]
+public class Ingredient
 {
-    [SerializeField]
-    PhysicalState physicalState;
-
-    public PhysicalState PhysicalState
-    {
-        get => physicalState;
-        set
-        {
-            sr.sprite = PowderSprite;
-            sr.color = PowerColor;
-            physicalState = value;
-        }
-    }
-
     public List<IngredientAttribute> Attributes;
-    public Color PowerColor;
-    public Sprite PowderSprite;
-
-    // Runtime
-    SpriteRenderer sr;
-
-    void Awake()
-    {
-        GetComponent<Draggable>().behaviour.Result = this;
-        sr = GetComponent<SpriteRenderer>();
-    }
-
-    public void StartDrag()
-    {
-    }
-
-    public void Drop(DropReceiver receiver)
-    {
-    }
-
-    public void Reorder(int siblingIndex)
-    {
-    }
 }
 
 [Flags]

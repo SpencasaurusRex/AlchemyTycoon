@@ -5,6 +5,7 @@ public class Bottle : MonoBehaviour, IDraggable
     SpriteRenderer sprite;
     public SpriteRenderer childSprite;
     public string Liquid;
+    public int Intensity;
 
     // Runtime
     string previousLayer;
