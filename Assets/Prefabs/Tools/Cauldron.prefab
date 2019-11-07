@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &671928851298334772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2253281142857556047}
+  - component: {fileID: 5299741420200183355}
+  - component: {fileID: 707085081}
+  m_Layer: 0
+  m_Name: FloatingCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2253281142857556047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671928851298334772}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 958411288564338230}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &5299741420200183355
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671928851298334772}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.002554059, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.0082694
+--- !u!114 &707085081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671928851298334772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57b22c72ed870441a2d39493abaced0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &958411288564338226
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +74,7 @@ GameObject:
   - component: {fileID: 1955302334}
   - component: {fileID: 7536672294785159491}
   - component: {fileID: 6049870177010937658}
+  - component: {fileID: 820833743}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Untagged
@@ -33,6 +94,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6380028459549064967}
+  - {fileID: 2253281142857556047}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,6 +215,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632b563151fb0054daba5164e8d26e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MixPrefab: {fileID: 0}
+  IngredientParent: {fileID: 0}
+  UICollider: {fileID: 707085081}
+--- !u!114 &820833743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958411288564338226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f5a1c279ebfd04987d661ba24b74cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviour:
+    ObjectField: {fileID: 0}
+    ResultType: 
 --- !u!1 &1435292940180899188
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +245,7 @@ GameObject:
   - component: {fileID: 1015211430399481273}
   - component: {fileID: 4877851927417710285}
   - component: {fileID: 5767553267635285446}
+  - component: {fileID: 1440352642}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -252,6 +333,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
+--- !u!58 &1440352642
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435292940180899188}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.22154236, y: 0}
+  serializedVersion: 2
+  m_Radius: 31.761501
 --- !u!1 &6952447504494590027
 GameObject:
   m_ObjectHideFlags: 0

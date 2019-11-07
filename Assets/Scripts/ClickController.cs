@@ -138,7 +138,10 @@ public class ClickController : MonoBehaviour
     {
         RaycastHit2D[] hits = Physics2D.RaycastAll(position, Vector2.zero);
         // Oof
-        hits = hits.OrderByDescending(x => SortingLayer.GetLayerValueFromID(x.collider.GetComponent<SpriteRenderer>().sortingLayerID)).ThenByDescending(x => x.collider.GetComponent<SpriteRenderer>().sortingOrder).ToArray();
+        hits = hits
+                .Where(x => x.collider.GetComponent<SpriteRenderer>() != null)
+                .OrderByDescending(x => SortingLayer.GetLayerValueFromID(x.collider.GetComponent<SpriteRenderer>().sortingLayerID))
+                .ThenByDescending(x => x.collider.GetComponent<SpriteRenderer>().sortingOrder).ToArray();
 
         foreach (var hit in hits)
         {
