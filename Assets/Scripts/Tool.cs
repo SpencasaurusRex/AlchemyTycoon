@@ -3,8 +3,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(DropReceiver))]
-public class Tool : SerializedMonoBehaviour, IDropReceiver
+[RequireComponent(typeof(Interactable))]
+public class Tool : SerializedMonoBehaviour, IDragReceiver
 {
     const int WAITING = 0;
     const int PROCESSING = 1;
@@ -22,18 +22,11 @@ public class Tool : SerializedMonoBehaviour, IDropReceiver
     IngredientMix processingTarget;
     SpriteRenderer processingRender;
 
-    public bool Receive(GameObject obj)
+    void Start()
     {
-        if (currentState == PROCESSING) return false;
-
-        var ingredientMix = obj.GetComponent<IngredientMix>();
-        if (ingredientMix == null) return false;
-
-        var renderer = obj.GetComponent<SpriteRenderer>();
-        if (!AcceptedPhysical.Contains(ingredientMix.PhysicalState)) return false;
-
-        StartProcessing(ingredientMix, renderer);
-        return true;
+        var interactable = GetComponent<Interactable>();
+        interactable.Register(this);
+        interactable.OnReceive += Receive;
     }
 
     void Update()
@@ -82,9 +75,25 @@ public class Tool : SerializedMonoBehaviour, IDropReceiver
         currentState = WAITING;
     }
 
-    void Awake()
+    public bool CanReceive(GameObject obj)
     {
-        GetComponent<DropReceiver>().behaviour.Result = this;
+        if (currentState == PROCESSING) return false;
+
+        var ingredientMix = obj.GetComponent<IngredientMix>();
+        if (ingredientMix == null) return false;
+
+        var renderer = obj.GetComponent<SpriteRenderer>();
+        if (!AcceptedPhysical.Contains(ingredientMix.PhysicalState)) return false;
+
+        return true;
+    }
+
+    public void Receive(GameObject obj)
+    {
+        var ingredientMix = obj.GetComponent<IngredientMix>();
+        var renderer = obj.GetComponent<SpriteRenderer>();
+
+        StartProcessing(ingredientMix, renderer);
     }
 }
 

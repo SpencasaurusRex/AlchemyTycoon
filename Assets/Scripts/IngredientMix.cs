@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Draggable))]
+[RequireComponent(typeof(Interactable))]
 public class IngredientMix : MonoBehaviour
 {
     [SerializeField]

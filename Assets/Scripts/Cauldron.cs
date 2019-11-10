@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Cauldron: MonoBehaviour, IClickable, IDropReceiver
+public class Cauldron: MonoBehaviour, IDragReceiver
 {
     // Configuration
     public IngredientMix MixPrefab;
@@ -21,12 +21,14 @@ public class Cauldron: MonoBehaviour, IClickable, IDropReceiver
     {
         canvas = GetComponentInChildren<Canvas>();
         showingIngredients = canvas.enabled;
+        var interactable = GetComponent<Interactable>();
+        interactable.OnReceive += Receive;
+        interactable.OnClickRelease += Click;
+        interactable.Register(this);
     }
 
     void Start()
     {
-        GetComponent<Clickable>().behaviour.Result = this;
-        GetComponent<DropReceiver>().behaviour.Result = this;
         UICollider.OnTriggerEnter += UIEnter;
         UICollider.OnTriggerExit += UIExit;
     }
@@ -41,12 +43,10 @@ public class Cauldron: MonoBehaviour, IClickable, IDropReceiver
         print("UI Exit");
     }
 
-    public bool Click()
+    public void Click()
     {
         DisplayIngredients();
         //MixIngredients();
-
-        return true;
     }
 
     public void DisplayIngredients()
@@ -165,7 +165,7 @@ public class Cauldron: MonoBehaviour, IClickable, IDropReceiver
         return positions;
     }
 
-    public bool Receive(GameObject obj)
+    public void Receive(GameObject obj)
     {
         var bottle = obj.GetComponent<Bottle>();
         var ingredientMix = obj.GetComponent<IngredientMix>();
@@ -178,6 +178,7 @@ public class Cauldron: MonoBehaviour, IClickable, IDropReceiver
         {
             ingredientsHeld.Add(ingredientMix);
         }
+        else return;
 
         if (!showingIngredients)
         {
@@ -187,7 +188,10 @@ public class Cauldron: MonoBehaviour, IClickable, IDropReceiver
         obj.transform.position = new Vector2(0, 0);
         obj.transform.SetParent(this.transform, true);
         obj.transform.localScale = new Vector2(ItemFloatSize, ItemFloatSize);
-
-        return true;
+    }
+    
+    public bool CanReceive(GameObject obj)
+    {
+        return obj.GetComponent<Bottle>() != null || obj.GetComponent<IngredientMix>() != null;
     }
 }

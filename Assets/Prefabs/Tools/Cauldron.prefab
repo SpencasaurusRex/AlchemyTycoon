@@ -71,17 +71,15 @@ GameObject:
   - component: {fileID: 958411288564338230}
   - component: {fileID: 958411288564338225}
   - component: {fileID: 958411288564338224}
-  - component: {fileID: 1955302334}
-  - component: {fileID: 7536672294785159491}
   - component: {fileID: 6049870177010937658}
-  - component: {fileID: 820833743}
+  - component: {fileID: 4476707341086735913}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &958411288564338230
 Transform:
   m_ObjectHideFlags: 0
@@ -173,36 +171,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7904861, y: 0.68395877}
   m_EdgeRadius: 0
---- !u!114 &1955302334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 958411288564338226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 485cd1066ac935741ad4eefc3fa34eae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviour:
-    ObjectField: {fileID: 0}
-    ResultType: 
---- !u!114 &7536672294785159491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 958411288564338226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f81d773d710b6f0488c86b7e53731ba2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviour:
-    ObjectField: {fileID: 0}
-    ResultType: 
 --- !u!114 &6049870177010937658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +186,9 @@ MonoBehaviour:
   MixPrefab: {fileID: 0}
   IngredientParent: {fileID: 0}
   UICollider: {fileID: 707085081}
---- !u!114 &820833743
+  ItemFloatRadius: 0.7
+  ItemFloatSize: 0.8
+--- !u!114 &4476707341086735913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,12 +197,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 958411288564338226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27f5a1c279ebfd04987d661ba24b74cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 4158953299fd8fe4db63eb634053bc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  behaviour:
-    ObjectField: {fileID: 0}
-    ResultType: 
+  Clickable: 1
+  Draggable: 1
+  DropReceiver: 1
 --- !u!1 &1435292940180899188
 GameObject:
   m_ObjectHideFlags: 0

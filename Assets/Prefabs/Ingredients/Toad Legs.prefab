@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5302101855707037968}
   - component: {fileID: 5302101855707037969}
   - component: {fileID: 5302101855707037970}
-  - component: {fileID: 5302101855707037974}
   - component: {fileID: 1281372126}
+  - component: {fileID: 8711212048179094431}
   m_Layer: 0
   m_Name: Toad Legs
   m_TagString: Untagged
@@ -110,21 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6858462, y: 0.7175665}
   m_EdgeRadius: 0
---- !u!114 &5302101855707037974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5302101855707037971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 485cd1066ac935741ad4eefc3fa34eae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviour:
-    ObjectField: {fileID: 0}
-    ResultType: 
 --- !u!114 &1281372126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +134,18 @@ MonoBehaviour:
   PowerColor: {r: 0.101960786, g: 0.47843137, b: 0.24313726, a: 1}
   PowderSprite: {fileID: -1308681137950721158, guid: e0a2511fd721ce64caa6d0c89e353ed0,
     type: 3}
+--- !u!114 &8711212048179094431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302101855707037971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4158953299fd8fe4db63eb634053bc60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clickable: 0
+  Draggable: 1
+  DropReceiver: 0

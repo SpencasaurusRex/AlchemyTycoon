@@ -9,25 +9,29 @@ public class ClickController : MonoBehaviour
     const int RIGHT = 1;
     const int MIDDLE = 2;
 
-    const int CLICK = 0;
-    const int DRAG = 1;
-    const int MISCLICK = 2;
+    const int MISCLICK = -1;
+    const int NONE = 0;
+    const int CLICK = 1;
+    const int DRAG = 2;
 
     // Singleton reference
     public static ClickController Instance; 
     
     // Configuration
-    public int MinimumDragDistance = 10;
+    public int MinimumDragDistance = 3;
 
     // Runtime
-    bool mousePressed;
     float timeSinceMousePress;
     Vector2 clickPositionPixels;
     int currentState;
-    GameObject dragTarget;
-    Draggable dragComp;
+    Interactable target;
 
-    Vector3 MousePositionPixels => Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    Vector3 MousePositionWorld => Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+    public delegate void MisclickDown(Vector3 pos);
+    public static event MisclickDown OnMisclickDown;
+    public delegate void MisclickRelease(Vector3 pos);
+    public static event MisclickRelease OnMisclickRelease;
 
     void Start()
     {
@@ -42,23 +46,37 @@ public class ClickController : MonoBehaviour
     void Update()
     {
         // First clicked
-        if (Input.GetMouseButtonDown(LEFT))
+        if (currentState < 1 && Input.GetMouseButtonDown(LEFT))
         {
-            mousePressed = true;
             timeSinceMousePress = 0;
             clickPositionPixels = Input.mousePosition;
+
+            if (Cast(x => x.Clickable || x.Draggable, out target))
+            {
+                if (target.Clickable) target.InvokeClickDown();
+                currentState = CLICK;
+            }
+            else
+            {
+                OnMisclickDown?.Invoke(MousePositionWorld);
+                currentState = MISCLICK;
+            }
         }
         // Hold click
-        else if (mousePressed && Input.GetMouseButton(LEFT))
+        else if (currentState > 0 && Input.GetMouseButton(LEFT))
         {
             timeSinceMousePress += Time.deltaTime;
             if (currentState == CLICK)
             {
                 // Check to see how far we have dragged
                 Vector2 distance = (Vector2)Input.mousePosition - clickPositionPixels;
-                if (distance.magnitude >= MinimumDragDistance)
+                if (target.Draggable && distance.magnitude >= MinimumDragDistance)
                 {
                     StartDrag();
+                }
+                else if (target.Clickable)
+                {
+                    target.InvokeClickHold();
                 }
             }
             if (currentState == DRAG)
@@ -67,92 +85,81 @@ public class ClickController : MonoBehaviour
             }
         }
         // Stopped clicking
-        else if (mousePressed && !Input.GetMouseButton(LEFT))
+        else if (currentState != 0 && !Input.GetMouseButton(LEFT))
         {
-            if (currentState == CLICK)
+            if (currentState == CLICK && target.Clickable)
             {
-                PerformClick();
+                ReleaseClick();
             }
             else if (currentState == DRAG)
             {
-                FinishDrag();
+                ReleaseDrag();
+            }
+            else if (currentState == MISCLICK)
+            {
+                ReleaseMisclick();
             }
 
-            mousePressed = false;
             timeSinceMousePress = 0;
-            currentState = CLICK;
+            currentState = NONE;
+            target = null;
         }
     }
 
     void StartDrag()
     {
-        if (Cast(MousePositionPixels, typeof(Draggable), null, out var info))
-        {
-            dragTarget = info.collider.gameObject;
-            dragComp = dragTarget.GetComponent<Draggable>();
-            dragComp.StartDrag();
-            currentState = DRAG;
-        }
-        else
-        {
-            currentState = MISCLICK;
-        }
+        currentState = DRAG;
+        target.InvokeStartDrag();
     }
 
     void PerformDrag()
     {
-        dragTarget.transform.localPosition = MousePositionPixels.WithZ(0);
+        target.transform.position = MousePositionWorld.WithZ(0);
+
+        if (Cast(x => x.DropReceiver && x != target, out var receiver))
+        {
+            target.InvokeDrag(receiver);
+        }
+        else target.InvokeDrag(null);
     }
 
-    void PerformClick()
+    void ReleaseDrag()
     {
-        if (Cast(MousePositionPixels, typeof(Clickable), null, out var info))
+        if (Cast(x => x.DropReceiver && x != target, out var receiver))
         {
-            info.collider.gameObject.GetComponent<Clickable>().Click();
-        }
-        else
-        {
-
-        }
-    }
-
-    void FinishDrag()
-    {
-        if (Cast(MousePositionPixels, typeof(DropReceiver), dragTarget, out var info))
-        {
-            var receiver = info.collider.gameObject.GetComponent<DropReceiver>();
-            if (receiver.Receive(dragTarget))
+            if (receiver.CanReceive(target.gameObject))
             {
-                dragComp.Drop(receiver);
+                target.InvokeDrop(receiver);
+                receiver.InvokeReceive(target.gameObject);
             }
-            else dragComp.Drop(null);
+            else target.InvokeDrop(receiver);
         }
-        else dragComp.Drop(null);
+        else target.InvokeDrop(null);
 
-        dragTarget.transform.position = dragTarget.transform.localPosition;
-        dragTarget = null;
-        dragComp = null;
+        target.transform.position = target.transform.localPosition;
     }
 
-    bool Cast(Vector3 position, Type component, GameObject ignore, out RaycastHit2D hitInfo)
+    void ReleaseClick()
     {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(position, Vector2.zero);
-        // Oof
-        hits = hits
-                .Where(x => x.collider.GetComponent<SpriteRenderer>() != null)
-                .OrderByDescending(x => SortingLayer.GetLayerValueFromID(x.collider.GetComponent<SpriteRenderer>().sortingLayerID))
-                .ThenByDescending(x => x.collider.GetComponent<SpriteRenderer>().sortingOrder).ToArray();
+        target.InvokeClickRelease();
+    }
 
-        foreach (var hit in hits)
-        {
-            if (hit.collider.gameObject == ignore) continue;
-            if (hit.collider.gameObject.GetComponent(component) != null)
-            {
-                hitInfo = hit;
-                return true;
-            }
-        }
-        hitInfo = new RaycastHit2D();
-        return false;
+    void ReleaseMisclick()
+    {
+        OnMisclickRelease?.Invoke(MousePositionWorld);
+    }
+
+    bool Cast(Predicate<Interactable> condition, out Interactable result)
+    {
+        RaycastHit2D[] hits = Physics2D.RaycastAll(MousePositionWorld, Vector2.zero);
+
+        Interactable[] interactables = hits.Select(x => x.collider.gameObject.GetComponent<Interactable>())
+                .Where(x => x != null && condition(x))
+                .OrderByDescending(x => x.Layer)
+                .ThenByDescending(x => x.Order).ToArray();
+
+        result = interactables.FirstOrDefault();
+
+        return interactables.Length > 0;
     }
 }

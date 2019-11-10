@@ -91,9 +91,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1098649634678002817}
   - component: {fileID: 1098649634678002818}
-  - component: {fileID: 1098649634678002823}
   - component: {fileID: 1147679609}
   - component: {fileID: 1147679612}
+  - component: {fileID: 3633575484777427058}
   m_Layer: 0
   m_Name: Bottle of Water
   m_TagString: Untagged
@@ -166,21 +166,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1098649634678002823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098649634678002819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 485cd1066ac935741ad4eefc3fa34eae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviour:
-    ObjectField: {fileID: 0}
-    ResultType: 
 --- !u!61 &1147679609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -221,3 +206,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   childSprite: {fileID: 1098649634327843488}
   Liquid: Water
+  Intensity: 0
+--- !u!114 &3633575484777427058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098649634678002819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4158953299fd8fe4db63eb634053bc60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clickable: 0
+  Draggable: 1
+  DropReceiver: 0

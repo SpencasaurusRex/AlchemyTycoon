@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 958411288564338230}
   - component: {fileID: 958411288564338225}
   - component: {fileID: 958411288564338224}
-  - component: {fileID: 958411288564338227}
   - component: {fileID: 958411288564338231}
-  - component: {fileID: 1955302334}
+  - component: {fileID: 5196984189201477249}
   m_Layer: 0
   m_Name: Calcinator
   m_TagString: Untagged
@@ -112,21 +111,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7904861, y: 0.68395877}
   m_EdgeRadius: 0
---- !u!114 &958411288564338227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 958411288564338226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27f5a1c279ebfd04987d661ba24b74cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviour:
-    ObjectField: {fileID: 0}
-    ResultType: 
 --- !u!114 &958411288564338231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +138,7 @@ MonoBehaviour:
   - Index: 0
     Delta: -1
   PhysicalConversions: 
---- !u!114 &1955302334
+--- !u!114 &5196984189201477249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,12 +147,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 958411288564338226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 485cd1066ac935741ad4eefc3fa34eae, type: 3}
+  m_Script: {fileID: 11500000, guid: 4158953299fd8fe4db63eb634053bc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  behaviour:
-    ObjectField: {fileID: 0}
-    ResultType: 
+  Clickable: 0
+  Draggable: 1
+  DropReceiver: 1
 --- !u!1 &1435292940180899188
 GameObject:
   m_ObjectHideFlags: 0

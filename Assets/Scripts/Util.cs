@@ -25,4 +25,10 @@ public static class Util
             Mathf.Round(v.y - gridOffset.y) + gridOffset.y,
             Mathf.Round(v.z - gridOffset.z) + gridOffset.z);
     }
+
+    public static bool TryGetComponent<T>(this GameObject obj, out T result)
+    {
+        result = obj.GetComponent<T>();
+        return result != null;
+    }
 }
