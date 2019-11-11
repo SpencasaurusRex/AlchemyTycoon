@@ -11,11 +11,12 @@ public class Interactable : MonoBehaviour
     // Runtime
     SpriteRenderer sr;
     List<IDragReceiver> DragReceivers = new List<IDragReceiver>();
+    Transform previousParent;
 
     public int Layer => SortingLayer.GetLayerValueFromID(sr.sortingLayerID);
     public int Order => sr.sortingOrder;
 
-    void Start()
+    void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
     }
@@ -31,6 +32,12 @@ public class Interactable : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void SetEnabled(bool enabled)
+    {
+        sr.enabled = enabled;
+
     }
 
     public void Register(IDragReceiver receiver)
@@ -52,15 +59,25 @@ public class Interactable : MonoBehaviour
 
     public delegate void StartDrag();
     public event StartDrag OnStartDrag;
-    public void InvokeStartDrag() => OnStartDrag?.Invoke();
+    public void InvokeStartDrag()
+    {
+        //previousParent = transform.parent;
+        //transform.parent = ClickController.Instance.gameObject.transform;
+        OnStartDrag?.Invoke();
+    } 
 
     public delegate void Drag(Interactable over);
     public event Drag OnDrag;
     public void InvokeDrag(Interactable over) => OnDrag?.Invoke(over);
 
-    public delegate void Drop(Interactable on);
+    public delegate void Drop(GameObject self, Interactable on);
     public event Drop OnDrop;
-    public void InvokeDrop(Interactable on) => OnDrop?.Invoke(on);
+    public void InvokeDrop(GameObject self, Interactable on)
+    {
+        //transform.parent = previousParent;
+        //previousParent = null;
+        OnDrop?.Invoke(self, on);
+    } 
 
     public delegate void Receive(GameObject obj);
     public event Receive OnReceive;

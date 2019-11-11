@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Interactable))]
 public class IngredientMix : MonoBehaviour
@@ -9,7 +10,7 @@ public class IngredientMix : MonoBehaviour
     public List<Ingredient> Ingredients;
 
     // Configuration
-    public Color PowerColor;
+    public Color PowderColor;
     public Sprite PowderSprite;
 
     // Runtime
@@ -21,7 +22,7 @@ public class IngredientMix : MonoBehaviour
         set
         {
             sr.sprite = PowderSprite;
-            sr.color = PowerColor;
+            sr.color = PowderColor;
             physicalState = value;
         }
     }

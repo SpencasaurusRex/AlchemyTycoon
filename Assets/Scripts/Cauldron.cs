@@ -6,6 +6,7 @@ public class Cauldron: MonoBehaviour, IDragReceiver
     // Configuration
     public IngredientMix MixPrefab;
     public Transform IngredientParent;
+    public Transform BottleParent;
     public Collision2DTrigger UICollider;
     public float ItemFloatRadius = 0.7f;
     public float ItemFloatSize = .8f;
@@ -31,16 +32,33 @@ public class Cauldron: MonoBehaviour, IDragReceiver
     {
         UICollider.OnTriggerEnter += UIEnter;
         UICollider.OnTriggerExit += UIExit;
+        print("Cauldron Start()");
     }
 
     void UIEnter(Collider2D collider)
     {
-        print("UI Enter");
+        if (!showingIngredients) return;
+        if (collider.TryGetComponent<Interactable>(out var interactable))
+        {
+            print("Registering");
+            interactable.OnDrop += UIDropped;
+        }
     }
 
     void UIExit(Collider2D collider)
     {
-        print("UI Exit");
+        if (collider.TryGetComponent<Interactable>(out var interactable))
+        {
+            print("Unregistering");
+            interactable.OnDrop -= UIDropped;
+        }
+        if (!collider.gameObject.activeSelf) return;
+        Release(collider.gameObject);
+    }
+
+    public void UIDropped(GameObject obj, Interactable _)
+    {
+        Receive(obj);
     }
 
     public void Click()
@@ -51,6 +69,7 @@ public class Cauldron: MonoBehaviour, IDragReceiver
 
     public void DisplayIngredients()
     {
+        print("DisplayIngredients()");
         canvas.enabled = !canvas.enabled;
 
         showingIngredients = canvas.enabled;
@@ -76,12 +95,14 @@ public class Cauldron: MonoBehaviour, IDragReceiver
 
         foreach (var ingredient in ingredientsHeld)
         {
+            //ingredient.gameObject.GetComponent<Interactable>().SetEnabled(showingIngredients);
             ingredient.gameObject.SetActive(showingIngredients);
         }
 
         foreach (var bottle in bottlesHeld)
         {
             bottle.gameObject.SetActive(showingIngredients);
+            //bottle.gameObject.GetComponent<Interactable>().SetEnabled(showingIngredients);
         }
     }
 
@@ -127,9 +148,11 @@ public class Cauldron: MonoBehaviour, IDragReceiver
 
     void Update()
     {
-
         if (showingIngredients)
         {
+            // This might be the last audio test that were going to do
+            // And this is me typing and talking at the same time
+
             floatingRotationOffset += Time.deltaTime * .3f;
             int totalItems = ingredientsHeld.Count + bottlesHeld.Count;
             var positions = GetRotatingPositions();
@@ -172,10 +195,12 @@ public class Cauldron: MonoBehaviour, IDragReceiver
 
         if (bottle != null)
         {
+            if (bottlesHeld.Contains(bottle)) return;
             bottlesHeld.Add(bottle);
         }
         else if (ingredientMix != null)
         {
+            if (ingredientsHeld.Contains(ingredientMix)) return;
             ingredientsHeld.Add(ingredientMix);
         }
         else return;
@@ -185,11 +210,31 @@ public class Cauldron: MonoBehaviour, IDragReceiver
             obj.SetActive(false);
         }
 
-        obj.transform.position = new Vector2(0, 0);
+        //obj.transform.position = new Vector2(0, 0);
         obj.transform.SetParent(this.transform, true);
         obj.transform.localScale = new Vector2(ItemFloatSize, ItemFloatSize);
     }
-    
+
+    public void Release(GameObject obj)
+    {
+        var bottle = obj.GetComponent<Bottle>();
+        var ingredientMix = obj.GetComponent<IngredientMix>();
+
+        if (bottle != null)
+        {
+            bottlesHeld.Remove(bottle);
+            bottle.transform.parent = BottleParent;
+        }
+        else if (ingredientMix != null)
+        {
+            ingredientsHeld.Remove(ingredientMix);
+            ingredientMix.transform.parent = IngredientParent;
+        }
+        else return;
+
+        obj.transform.localScale = new Vector2(1, 1);
+    }
+
     public bool CanReceive(GameObject obj)
     {
         return obj.GetComponent<Bottle>() != null || obj.GetComponent<IngredientMix>() != null;

@@ -63,7 +63,7 @@ public class ClickController : MonoBehaviour
             }
         }
         // Hold click
-        else if (currentState > 0 && Input.GetMouseButton(LEFT))
+        else if (currentState > NONE && Input.GetMouseButton(LEFT))
         {
             timeSinceMousePress += Time.deltaTime;
             if (currentState == CLICK)
@@ -85,7 +85,7 @@ public class ClickController : MonoBehaviour
             }
         }
         // Stopped clicking
-        else if (currentState != 0 && !Input.GetMouseButton(LEFT))
+        else if (currentState != NONE && !Input.GetMouseButton(LEFT))
         {
             if (currentState == CLICK && target.Clickable)
             {
@@ -129,14 +129,12 @@ public class ClickController : MonoBehaviour
         {
             if (receiver.CanReceive(target.gameObject))
             {
-                target.InvokeDrop(receiver);
+                target.InvokeDrop(target.gameObject, receiver);
                 receiver.InvokeReceive(target.gameObject);
             }
-            else target.InvokeDrop(receiver);
+            else target.InvokeDrop(target.gameObject, receiver);
         }
-        else target.InvokeDrop(null);
-
-        target.transform.position = target.transform.localPosition;
+        else target.InvokeDrop(target.gameObject, null);
     }
 
     void ReleaseClick()
