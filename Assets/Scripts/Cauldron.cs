@@ -8,9 +8,7 @@ public class Cauldron: MonoBehaviour, IDragReceiver
     public Transform IngredientParent;
     public Transform BottleParent;
     public Collision2DTrigger UICollider;
-    public float StartItemFloatRadius = 0.7f;
-    public float StartItemFloatSize = .8f;
-    public float StartItemFloatSpeed = .3f;
+
     public float MaxClickTime = 0.2f;
 
     // Runtime
@@ -18,34 +16,27 @@ public class Cauldron: MonoBehaviour, IDragReceiver
     List<IngredientMix> ingredientsHeld = new List<IngredientMix>();
     List<Bottle> bottlesHeld = new List<Bottle>();
     bool showingIngredients;
-    float floatingRotationOffset;
-
-    float itemFloatRadius;
-    float itemFloatSize;
-    float itemFloatSpeed;
-
+    CircleMover circleMover;
+    Interactable interactable;
     float maxClickTime;
 
     void Awake()
     {
         canvas = GetComponentInChildren<Canvas>();
         showingIngredients = canvas.enabled;
-        var interactable = GetComponent<Interactable>();
+        circleMover = GetComponent<CircleMover>();
+        interactable = GetComponent<Interactable>();
         interactable.OnReceive += Receive;
-        interactable.OnClickRelease += Click;
-        interactable.OnClickHold += Hold;
+        interactable.OnClickRelease += ClickRelease;
+        interactable.OnClickHold += ClickHold;
+        interactable.OnStartDrag += StartDrag;
         interactable.Register(this);
-
-        itemFloatRadius = StartItemFloatRadius;
-        itemFloatSize = StartItemFloatSize;
-        itemFloatSpeed = StartItemFloatSpeed;
     }
 
     void Start()
     {
         UICollider.OnTriggerEnter += UIEnter;
         UICollider.OnTriggerExit += UIExit;
-        print("Cauldron Start()");
     }
 
     void UIEnter(Collider2D collider)
@@ -65,7 +56,6 @@ public class Cauldron: MonoBehaviour, IDragReceiver
         }
         if (!collider.gameObject.activeSelf) return;
         Release(collider.gameObject);
-        // This is what typing will sound like
     }
 
     public void UIDropped(GameObject obj, Interactable _)
@@ -73,63 +63,36 @@ public class Cauldron: MonoBehaviour, IDragReceiver
         Receive(obj);
     }
 
-    public void Click(float totalTime)
+    public void ClickRelease(float totalTime)
     {
         if (totalTime < MaxClickTime)
         {
             // Stop clicking
             DisplayIngredients();
         }
-        else
-        {
-            // Stop holding
-            // TODO
-        }
+        circleMover.StopAnimation();
+        interactable.Draggable = true;
     }
 
-    public void Hold(float totalTime)
+    public void ClickHold(float totalTime)
     {
         if (totalTime > MaxClickTime)
         {
-
+            circleMover.StartAnimation();
+            interactable.Draggable = false;
         }
+    }
+
+    public void StartDrag()
+    {
+        circleMover.StopAnimation();
     }
 
     public void DisplayIngredients()
     {
-        print("DisplayIngredients()");
         canvas.enabled = !canvas.enabled;
-
         showingIngredients = canvas.enabled;
-
-        int totalItems = ingredientsHeld.Count + bottlesHeld.Count;
-        var positions = GetRotatingPositions();
-
-        if (showingIngredients)
-        {
-            for (int i = 0; i < totalItems; i++)
-            {
-                if (i < ingredientsHeld.Count)
-                {
-                    ingredientsHeld[i].transform.position = positions[i];
-                }
-                else
-                {
-                    var bottle = bottlesHeld[i - ingredientsHeld.Count];
-                    bottle.transform.position = positions[i];
-                }
-            }
-        }
-
-        foreach (var ingredient in ingredientsHeld)
-        {
-            ingredient.gameObject.SetActive(showingIngredients);
-        }
-
-        foreach (var bottle in bottlesHeld)
-        {
-            bottle.gameObject.SetActive(showingIngredients);
-        }
+        circleMover.SetVisible(showingIngredients);
     }
 
     public void MixIngredients()
@@ -172,48 +135,6 @@ public class Cauldron: MonoBehaviour, IDragReceiver
         ingredientsHeld.Clear();
     }
 
-    void Update()
-    {
-        if (showingIngredients)
-        {
-            // This might be the last audio test that were going to do
-            // And this is me typing and talking at the same time
-
-            floatingRotationOffset += Time.deltaTime * float;
-            int totalItems = ingredientsHeld.Count + bottlesHeld.Count;
-            var positions = GetRotatingPositions();
-
-            for (int i = 0; i < totalItems; i++)
-            {
-                if (i < ingredientsHeld.Count)
-                {
-                    ingredientsHeld[i].transform.position  
-                        = Vector3.Lerp(ingredientsHeld[i].transform.position, positions[i], .2f);
-                }
-                else
-                {
-                    var bottle = bottlesHeld[i - ingredientsHeld.Count];
-                    bottle.transform.position
-                        = Vector3.Lerp(bottle.transform.position, positions[i], .2f);
-                }
-            }
-        }
-    }
-
-    Vector2[] GetRotatingPositions()
-    {
-        int totalItems = ingredientsHeld.Count + bottlesHeld.Count;
-
-        Vector2[] positions = new Vector2[totalItems];
-        for (int i = 0; i < totalItems; i++)
-        {
-            float theta = Mathf.PI * 2 / totalItems * i + floatingRotationOffset;
-            positions[i] = new Vector2(Mathf.Cos(theta), Mathf.Sin(theta)) * StartItemFloatRadius + (Vector2)transform.position;
-        }
-
-        return positions;
-    }
-
     public void Receive(GameObject obj)
     {
         var bottle = obj.GetComponent<Bottle>();
@@ -236,15 +157,15 @@ public class Cauldron: MonoBehaviour, IDragReceiver
             obj.SetActive(false);
         }
 
-        //obj.transform.position = new Vector2(0, 0);
-        obj.transform.SetParent(this.transform, true);
-        obj.transform.localScale = new Vector2(StartItemFloatSize, StartItemFloatSize);
+        circleMover.AddTransform(obj.transform);
     }
 
     public void Release(GameObject obj)
     {
         var bottle = obj.GetComponent<Bottle>();
         var ingredientMix = obj.GetComponent<IngredientMix>();
+
+        circleMover.RemoveTransform(obj.transform);
 
         if (bottle != null)
         {

@@ -760,11 +760,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cauldron
       objectReference: {fileID: 0}
-    - target: {fileID: 958411288564338226, guid: ff070f89adb94584db37e444ecbc4594,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 958411288564338230, guid: ff070f89adb94584db37e444ecbc4594,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -830,41 +825,7 @@ PrefabInstance:
       propertyPath: BottleParent
       value: 
       objectReference: {fileID: 489438479}
-    - target: {fileID: 6049870177010937658, guid: ff070f89adb94584db37e444ecbc4594,
-        type: 3}
-      propertyPath: MixPrefab
-      value: 
-      objectReference: {fileID: 673845154117371423, guid: 78c60c09418316f4098a3400660d95b2,
-        type: 3}
-    - target: {fileID: 1435292940180899188, guid: ff070f89adb94584db37e444ecbc4594,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 671928851298334772, guid: ff070f89adb94584db37e444ecbc4594,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5299741420200183355, guid: ff070f89adb94584db37e444ecbc4594,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5299741420200183355, guid: ff070f89adb94584db37e444ecbc4594,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1015211430399481273, guid: ff070f89adb94584db37e444ecbc4594,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8138200447016123872, guid: ff070f89adb94584db37e444ecbc4594, type: 3}
-    - {fileID: 7846269519737800351, guid: ff070f89adb94584db37e444ecbc4594, type: 3}
-    - {fileID: 1440352642, guid: ff070f89adb94584db37e444ecbc4594, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff070f89adb94584db37e444ecbc4594, type: 3}
 --- !u!4 &1585961983 stripped
 Transform:
@@ -872,6 +833,97 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1585961982}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1658112626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 958411288564338226, guid: ff070f89adb94584db37e444ecbc4594,
+    type: 3}
+  m_PrefabInstance: {fileID: 1585961982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1658112627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658112626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cd4d0ef29154b41bea607c9960d6d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RadiusAnim:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.7254801
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9963377
+      value: 0.0026257038
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  SpeedAnim:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.38833618
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9940172
+      value: 9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  SizeAnim:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.000575374
+      value: 0.8160377
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2.005996
+      value: 0.69692004
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AnimationLength: 2
 --- !u!1001 &1673310229
 PrefabInstance:
   m_ObjectHideFlags: 0
