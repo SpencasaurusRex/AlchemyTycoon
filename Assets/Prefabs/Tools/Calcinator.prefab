@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 958411288564338224}
   - component: {fileID: 958411288564338231}
   - component: {fileID: 5196984189201477249}
+  - component: {fileID: 2752898008367019632}
   m_Layer: 0
   m_Name: Calcinator
   m_TagString: Untagged
@@ -153,6 +154,19 @@ MonoBehaviour:
   Clickable: 0
   Draggable: 1
   DropReceiver: 1
+--- !u!114 &2752898008367019632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958411288564338226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e5ca9b9d7fc4049959b94de9e3d144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoldingLayer: Holding
 --- !u!1 &1435292940180899188
 GameObject:
   m_ObjectHideFlags: 0

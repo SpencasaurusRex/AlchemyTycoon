@@ -6,7 +6,6 @@ public class Cauldron: MonoBehaviour, IDragReceiver
     // Configuration
     public IngredientMix MixPrefab;
     public Transform IngredientParent;
-    public Transform BottleParent;
     public Collision2DTrigger UICollider;
 
     public float MaxClickTime = 0.2f;
@@ -25,6 +24,7 @@ public class Cauldron: MonoBehaviour, IDragReceiver
         canvas = GetComponentInChildren<Canvas>();
         showingIngredients = canvas.enabled;
         circleMover = GetComponent<CircleMover>();
+        circleMover.OnAnimationComplete += MixIngredients;
         interactable = GetComponent<Interactable>();
         interactable.OnReceive += Receive;
         interactable.OnClickRelease += ClickRelease;
@@ -100,13 +100,18 @@ public class Cauldron: MonoBehaviour, IDragReceiver
         IngredientMix result = Instantiate(MixPrefab, IngredientParent);
         result.transform.position = transform.position + new Vector3(1, 0, 0);
 
+        Color averageColor = new Color(0, 0, 0);
+
         foreach (var ingredientMix in ingredientsHeld)
         {
+            averageColor += ingredientMix.PowderColor;
             foreach (var ingredient in ingredientMix.Ingredients)
             {
                 result.Ingredients.Add(ingredient);
             }
         }
+
+        result.SetColor(averageColor / ingredientsHeld.Count);
 
         foreach (var bottle in bottlesHeld)
         {
@@ -122,17 +127,19 @@ public class Cauldron: MonoBehaviour, IDragReceiver
             }
         }
 
-        foreach (var bottle in bottlesHeld)
+        for (int i = bottlesHeld.Count - 1; i >= 0; i--)
         {
-            Destroy(bottle.gameObject);
+            Destroy(bottlesHeld[i].gameObject);
         }
-        foreach (var ingredient in ingredientsHeld)
+        for (int i = ingredientsHeld.Count - 1; i >= 0; i--)
         {
-            Destroy(ingredient.gameObject);
+            Destroy(ingredientsHeld[i].gameObject);
         }
 
         bottlesHeld.Clear();
         ingredientsHeld.Clear();
+
+        circleMover.ClearTransforms();
     }
 
     public void Receive(GameObject obj)
@@ -164,18 +171,17 @@ public class Cauldron: MonoBehaviour, IDragReceiver
     {
         var bottle = obj.GetComponent<Bottle>();
         var ingredientMix = obj.GetComponent<IngredientMix>();
+        obj.transform.parent = IngredientParent;
 
         circleMover.RemoveTransform(obj.transform);
 
         if (bottle != null)
         {
             bottlesHeld.Remove(bottle);
-            bottle.transform.parent = BottleParent;
         }
         else if (ingredientMix != null)
         {
             ingredientsHeld.Remove(ingredientMix);
-            ingredientMix.transform.parent = IngredientParent;
         }
         else return;
 

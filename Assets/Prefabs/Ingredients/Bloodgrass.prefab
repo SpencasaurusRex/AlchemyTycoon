@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 655678381}
   - component: {fileID: 6391905964955115886}
   - component: {fileID: -8540114023245301180}
+  - component: {fileID: 7526703653866705204}
   m_Layer: 0
   m_Name: Bloodgrass
   m_TagString: Untagged
@@ -171,3 +172,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7526703653866705204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302101855707037971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e5ca9b9d7fc4049959b94de9e3d144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoldingLayer: Holding

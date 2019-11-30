@@ -66,7 +66,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 311373755
+  m_SortingLayerID: -1514084309
   m_SortingLayer: 3
   m_SortingOrder: -1
   m_Sprite: {fileID: -1040183049365507321, guid: e0a2511fd721ce64caa6d0c89e353ed0,
@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 1147679612}
   - component: {fileID: 3633575484777427058}
   - component: {fileID: 1830329791}
+  - component: {fileID: -6413681089407496584}
+  - component: {fileID: 6037079913699937846}
   m_Layer: 0
   m_Name: Bottle of Water
   m_TagString: Untagged
@@ -152,7 +154,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 311373755
+  m_SortingLayerID: -1514084309
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -3807297515833748856, guid: e0a2511fd721ce64caa6d0c89e353ed0,
@@ -244,3 +246,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-6413681089407496584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098649634678002819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e5ca9b9d7fc4049959b94de9e3d144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoldingLayer: Holding
+--- !u!114 &6037079913699937846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098649634678002819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec69616d9936784b822ea4cbf367bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Layers:
+  - {fileID: 1098649634327843488}
+  - {fileID: 1098649634678002818}

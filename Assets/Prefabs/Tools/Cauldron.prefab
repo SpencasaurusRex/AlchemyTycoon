@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 958411288564338224}
   - component: {fileID: 6049870177010937658}
   - component: {fileID: 4476707341086735913}
+  - component: {fileID: -3440596007715820352}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Untagged
@@ -188,8 +189,7 @@ MonoBehaviour:
   IngredientParent: {fileID: 0}
   BottleParent: {fileID: 0}
   UICollider: {fileID: 707085081}
-  ItemFloatRadius: 0.7
-  ItemFloatSize: 0.8
+  MaxClickTime: 0.2
 --- !u!114 &4476707341086735913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +205,19 @@ MonoBehaviour:
   Clickable: 1
   Draggable: 1
   DropReceiver: 1
+--- !u!114 &-3440596007715820352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958411288564338226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e5ca9b9d7fc4049959b94de9e3d144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoldingLayer: Holding
 --- !u!1 &1435292940180899188
 GameObject:
   m_ObjectHideFlags: 0

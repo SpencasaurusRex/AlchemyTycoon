@@ -30,6 +30,11 @@ public class CircleMover : MonoBehaviour
         transforms.Remove(transform);
     }
 
+    public void ClearTransforms()
+    {
+        transforms.Clear();
+    }
+
     public void SetVisible(bool visible)
     {
         if (!visible)
@@ -79,6 +84,8 @@ public class CircleMover : MonoBehaviour
         if (animating && animationProgress >= AnimationLength)
         {
             OnAnimationComplete?.Invoke();
+            animating = false;
+            animationProgress = 0;
         }
     }
 }

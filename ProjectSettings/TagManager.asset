@@ -47,9 +47,6 @@ TagManager:
   - name: UI
     uniqueID: 404600705
     locked: 0
-  - name: Bottle
-    uniqueID: 311373755
-    locked: 0
   - name: Ingredient
     uniqueID: 2780882987
     locked: 0

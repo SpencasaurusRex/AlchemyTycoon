@@ -26,9 +26,9 @@ public static class Util
             Mathf.Round(v.z - gridOffset.z) + gridOffset.z);
     }
 
-    public static bool TryGetComponent<T>(this GameObject obj, out T result)
-    {
-        result = obj.GetComponent<T>();
-        return result != null;
-    }
+    //public static bool TryGetComponent<T>(this GameObject obj, out T result)
+    //{
+    //    result = obj.GetComponent<T>();
+    //    return result != null;
+    //}
 }

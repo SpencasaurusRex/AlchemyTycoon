@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Interactable))]
 public class IngredientMix : MonoBehaviour
@@ -27,9 +26,15 @@ public class IngredientMix : MonoBehaviour
         }
     }
 
+    public void SetColor(Color color)
+    {
+        var sr = GetComponent<SpriteRenderer>();
+        sr.color = color;
+        PowderColor = color;
+    }
+
     void Awake()
     {
-        //GetComponent<Draggable>().behaviour.Result = this;
         sr = GetComponent<SpriteRenderer>();
     }
 
