@@ -173,6 +173,9 @@ TextureImporter:
   - first:
       213: 502952322982835236
     second: Cauldron
+  - first:
+      213: -8770164501394851128
+    second: particle
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -1188,6 +1191,27 @@ TextureImporter:
       bones: []
       spriteID: 6116a050d94a05248a1c9c9feeb41000
       internalID: 502952322982835236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 78
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe82b448fc03ed94aadd1037eabab991
+      internalID: -8770164501394851128
       vertices: []
       indices: 
       edges: []

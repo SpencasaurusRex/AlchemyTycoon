@@ -8,8 +8,10 @@ public class Cauldron: MonoBehaviour, IDragReceiver
     public Transform IngredientParent;
     public Transform BottleParent;
     public Collision2DTrigger UICollider;
-    public float ItemFloatRadius = 0.7f;
-    public float ItemFloatSize = .8f;
+    public float StartItemFloatRadius = 0.7f;
+    public float StartItemFloatSize = .8f;
+    public float StartItemFloatSpeed = .3f;
+    public float MaxClickTime = 0.2f;
 
     // Runtime
     Canvas canvas;
@@ -18,6 +20,12 @@ public class Cauldron: MonoBehaviour, IDragReceiver
     bool showingIngredients;
     float floatingRotationOffset;
 
+    float itemFloatRadius;
+    float itemFloatSize;
+    float itemFloatSpeed;
+
+    float maxClickTime;
+
     void Awake()
     {
         canvas = GetComponentInChildren<Canvas>();
@@ -25,7 +33,12 @@ public class Cauldron: MonoBehaviour, IDragReceiver
         var interactable = GetComponent<Interactable>();
         interactable.OnReceive += Receive;
         interactable.OnClickRelease += Click;
+        interactable.OnClickHold += Hold;
         interactable.Register(this);
+
+        itemFloatRadius = StartItemFloatRadius;
+        itemFloatSize = StartItemFloatSize;
+        itemFloatSpeed = StartItemFloatSpeed;
     }
 
     void Start()
@@ -40,7 +53,6 @@ public class Cauldron: MonoBehaviour, IDragReceiver
         if (!showingIngredients) return;
         if (collider.TryGetComponent<Interactable>(out var interactable))
         {
-            print("Registering");
             interactable.OnDrop += UIDropped;
         }
     }
@@ -49,11 +61,11 @@ public class Cauldron: MonoBehaviour, IDragReceiver
     {
         if (collider.TryGetComponent<Interactable>(out var interactable))
         {
-            print("Unregistering");
             interactable.OnDrop -= UIDropped;
         }
         if (!collider.gameObject.activeSelf) return;
         Release(collider.gameObject);
+        // This is what typing will sound like
     }
 
     public void UIDropped(GameObject obj, Interactable _)
@@ -61,10 +73,26 @@ public class Cauldron: MonoBehaviour, IDragReceiver
         Receive(obj);
     }
 
-    public void Click()
+    public void Click(float totalTime)
     {
-        DisplayIngredients();
-        //MixIngredients();
+        if (totalTime < MaxClickTime)
+        {
+            // Stop clicking
+            DisplayIngredients();
+        }
+        else
+        {
+            // Stop holding
+            // TODO
+        }
+    }
+
+    public void Hold(float totalTime)
+    {
+        if (totalTime > MaxClickTime)
+        {
+
+        }
     }
 
     public void DisplayIngredients()
@@ -95,14 +123,12 @@ public class Cauldron: MonoBehaviour, IDragReceiver
 
         foreach (var ingredient in ingredientsHeld)
         {
-            //ingredient.gameObject.GetComponent<Interactable>().SetEnabled(showingIngredients);
             ingredient.gameObject.SetActive(showingIngredients);
         }
 
         foreach (var bottle in bottlesHeld)
         {
             bottle.gameObject.SetActive(showingIngredients);
-            //bottle.gameObject.GetComponent<Interactable>().SetEnabled(showingIngredients);
         }
     }
 
@@ -153,7 +179,7 @@ public class Cauldron: MonoBehaviour, IDragReceiver
             // This might be the last audio test that were going to do
             // And this is me typing and talking at the same time
 
-            floatingRotationOffset += Time.deltaTime * .3f;
+            floatingRotationOffset += Time.deltaTime * float;
             int totalItems = ingredientsHeld.Count + bottlesHeld.Count;
             var positions = GetRotatingPositions();
 
@@ -182,7 +208,7 @@ public class Cauldron: MonoBehaviour, IDragReceiver
         for (int i = 0; i < totalItems; i++)
         {
             float theta = Mathf.PI * 2 / totalItems * i + floatingRotationOffset;
-            positions[i] = new Vector2(Mathf.Cos(theta), Mathf.Sin(theta)) * ItemFloatRadius + (Vector2)transform.position;
+            positions[i] = new Vector2(Mathf.Cos(theta), Mathf.Sin(theta)) * StartItemFloatRadius + (Vector2)transform.position;
         }
 
         return positions;
@@ -212,7 +238,7 @@ public class Cauldron: MonoBehaviour, IDragReceiver
 
         //obj.transform.position = new Vector2(0, 0);
         obj.transform.SetParent(this.transform, true);
-        obj.transform.localScale = new Vector2(ItemFloatSize, ItemFloatSize);
+        obj.transform.localScale = new Vector2(StartItemFloatSize, StartItemFloatSize);
     }
 
     public void Release(GameObject obj)

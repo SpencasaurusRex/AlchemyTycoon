@@ -76,7 +76,7 @@ public class ClickController : MonoBehaviour
                 }
                 else if (target.Clickable)
                 {
-                    target.InvokeClickHold();
+                    target.InvokeClickHold(timeSinceMousePress);
                 }
             }
             if (currentState == DRAG)
@@ -89,7 +89,7 @@ public class ClickController : MonoBehaviour
         {
             if (currentState == CLICK && target.Clickable)
             {
-                ReleaseClick();
+                ReleaseClick(timeSinceMousePress);
             }
             else if (currentState == DRAG)
             {
@@ -137,9 +137,9 @@ public class ClickController : MonoBehaviour
         else target.InvokeDrop(target.gameObject, null);
     }
 
-    void ReleaseClick()
+    void ReleaseClick(float totalTime)
     {
-        target.InvokeClickRelease();
+        target.InvokeClickRelease(totalTime);
     }
 
     void ReleaseMisclick()

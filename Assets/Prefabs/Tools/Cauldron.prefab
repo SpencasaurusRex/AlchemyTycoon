@@ -42,7 +42,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.002554059, y: 0}
@@ -79,7 +79,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &958411288564338230
 Transform:
   m_ObjectHideFlags: 0
@@ -88,7 +88,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958411288564338226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.754, z: 0}
+  m_LocalPosition: {x: 0, y: 1.7562, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6380028459549064967}
@@ -183,8 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632b563151fb0054daba5164e8d26e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MixPrefab: {fileID: 0}
+  MixPrefab: {fileID: 673845154117371423, guid: 78c60c09418316f4098a3400660d95b2,
+    type: 3}
   IngredientParent: {fileID: 0}
+  BottleParent: {fileID: 0}
   UICollider: {fileID: 707085081}
   ItemFloatRadius: 0.7
   ItemFloatSize: 0.8
@@ -215,7 +217,6 @@ GameObject:
   - component: {fileID: 1015211430399481273}
   - component: {fileID: 4877851927417710285}
   - component: {fileID: 5767553267635285446}
-  - component: {fileID: 1440352642}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -260,7 +261,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 404600705
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -303,22 +304,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
---- !u!58 &1440352642
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435292940180899188}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.22154236, y: 0}
-  serializedVersion: 2
-  m_Radius: 31.761501
 --- !u!1 &6952447504494590027
 GameObject:
   m_ObjectHideFlags: 0

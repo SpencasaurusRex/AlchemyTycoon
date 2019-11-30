@@ -19,6 +19,7 @@ public class Interactable : MonoBehaviour
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+
     }
 
     public bool CanReceive(GameObject obj)
@@ -49,13 +50,13 @@ public class Interactable : MonoBehaviour
     public event ClickDown OnClickDown;
     public void InvokeClickDown() => OnClickDown?.Invoke();
 
-    public delegate void ClickHold();
+    public delegate void ClickHold(float totalTime);
     public event ClickHold OnClickHold;
-    public void InvokeClickHold() => OnClickHold?.Invoke();
+    public void InvokeClickHold(float totalTime) => OnClickHold?.Invoke(totalTime);
 
-    public delegate void ClickRelease();
+    public delegate void ClickRelease(float totalTime);
     public event ClickRelease OnClickRelease;
-    public void InvokeClickRelease() => OnClickRelease?.Invoke();
+    public void InvokeClickRelease(float totalTime) => OnClickRelease?.Invoke(totalTime);
 
     public delegate void StartDrag();
     public event StartDrag OnStartDrag;
