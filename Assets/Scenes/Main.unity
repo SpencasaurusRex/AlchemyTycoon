@@ -871,9 +871,18 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.7254801
+      value: 0.73
       inSlope: 0
       outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.72741747
+      inSlope: -0.0051745754
+      outSlope: -0.0051745754
       tangentMode: 136
       weightedMode: 0
       inWeight: 0.33333334
@@ -903,7 +912,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.9940172
+      time: 1
       value: 10
       inSlope: 0
       outSlope: 0
@@ -927,8 +936,17 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 1
+      value: 0.815
+      inSlope: -0.002068637
+      outSlope: -0.002068637
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 2.005996
-      value: 0.69692004
+      value: 0.35
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -939,7 +957,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   AnimationLength: 2
-  MovementSharpness: 8
+  MovementSharpness: 16
 --- !u!1001 &1673310229
 PrefabInstance:
   m_ObjectHideFlags: 0
