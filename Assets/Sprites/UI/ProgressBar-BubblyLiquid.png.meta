@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: d89169f6c9ca88a41a5a8b2595cff28a
+guid: dcf571745ceabc647ab340f2a5daaf1f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7440668273734110218
-    second: ProgressBar_Outer
+      213: 7610133270453534435
+    second: ProgressBar-BubblyLiquid_0
   - first:
-      213: -4374723741160035172
-    second: ProgressBar_Inner
+      213: -2972924959180675413
+    second: ProgressBar-BubblyLiquid_1
+  - first:
+      213: 3758303982452748141
+    second: ProgressBar-BubblyLiquid_2
+  - first:
+      213: -8029593112342332049
+    second: ProgressBar-BubblyLiquid_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -48,10 +54,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -66,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -78,7 +84,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 32
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -90,7 +96,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 32
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -104,12 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ProgressBar_Outer
+      name: ProgressBar-BubblyLiquid_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
-        width: 16
+        x: 4
+        y: 13
+        width: 22
         height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -118,29 +124,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3021367c47011484ca092120b5d3f37b
-      internalID: -7440668273734110218
+      spriteID: ee07d3f0ba100284c9325168b85e7726
+      internalID: 7610133270453534435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProgressBar_Inner
+      name: ProgressBar-BubblyLiquid_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 12
+        x: 36
+        y: 13
+        width: 22
         height: 6
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f805fafd4eefa6b47b935db7105533c6
-      internalID: -4374723741160035172
+      spriteID: cd9cd93b61b8fb0479a5ff7dfc711266
+      internalID: -2972924959180675413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProgressBar-BubblyLiquid_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 13
+        width: 22
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a12b71ca79e8c54d9646fbefe2a0fd2
+      internalID: 3758303982452748141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProgressBar-BubblyLiquid_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 13
+        width: 22
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e729ee1630afb4d80c51d98c606849
+      internalID: -8029593112342332049
       vertices: []
       indices: 
       edges: []

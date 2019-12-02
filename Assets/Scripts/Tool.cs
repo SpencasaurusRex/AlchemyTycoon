@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Interactable))]
 public class Tool : SerializedMonoBehaviour, IDragReceiver
@@ -14,13 +15,21 @@ public class Tool : SerializedMonoBehaviour, IDragReceiver
     public float ProcessTime = 20;
     public List<AttributeAffector> Affectors;
     public PhysicalState[] PhysicalConversions;
-
+    public Color MultiplyColor;
 
     // Runtime
     int currentState;
     float currentProcessingProgress;
     IngredientMix processingTarget;
     SpriteRenderer processingRender;
+    ProgressBar progressBar;
+
+    void Awake()
+    {
+        progressBar = GetComponentInChildren<ProgressBar>();
+        progressBar.gameObject.SetActive(false);
+        progressBar.MaxWorkUnits = (int)ProcessTime;
+    }
 
     void Start()
     {
@@ -34,6 +43,7 @@ public class Tool : SerializedMonoBehaviour, IDragReceiver
         if (currentState == PROCESSING)
         {
             currentProcessingProgress += Time.deltaTime;
+            progressBar.SetProgress(currentProcessingProgress);
 
             if (currentProcessingProgress >= ProcessTime)
             {
@@ -49,6 +59,8 @@ public class Tool : SerializedMonoBehaviour, IDragReceiver
 
         renderer.enabled = false;
         currentState = PROCESSING;
+
+        progressBar.gameObject.SetActive(true);
     }
 
     void FinishProcessing()
@@ -68,8 +80,11 @@ public class Tool : SerializedMonoBehaviour, IDragReceiver
             }
         }
 
+        progressBar.gameObject.SetActive(false);
+
         processingRender.enabled = true;
         processingTarget.transform.position = transform.position + new Vector3(1, 0);
+        processingRender.color *= MultiplyColor;
 
         currentProcessingProgress = 0;
         currentState = WAITING;
